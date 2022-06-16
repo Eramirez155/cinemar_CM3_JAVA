@@ -1,0 +1,20 @@
+
+
+traer actulizaciones
+
+git fetch
+git status 
+git stash save
+git pull origin main 
+
+
+ver estado de directorios
+
+git status
+ls
+git stash clear
+
+agregar nueva rama
+git checkout -b "nombre de la rama(no va con comillas)"
+touch "comandoGit.txt (touch crea un archivo, en este caso comandoGit se llama el archivo) "
+nano comandoGit.txt (edita el archivo en linea)
