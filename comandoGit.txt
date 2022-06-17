@@ -23,5 +23,8 @@ git push origin "nombre de la rama(sin comillas)"
 
 
 como cambiar de rama
-
 git checkout "nombre de la rama"
+
+
+Para eliminar una rama
+git branch -d "nobre de la rama"
