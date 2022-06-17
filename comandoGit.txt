@@ -18,3 +18,10 @@ agregar nueva rama
 git checkout -b "nombre de la rama(no va con comillas)"
 touch "comandoGit.txt (touch crea un archivo, en este caso comandoGit se llama el archivo) "
 nano comandoGit.txt (edita el archivo en linea)
+
+git push origin "nombre de la rama(sin comillas)"
+
+
+como cambiar de rama
+
+git checkout "nombre de la rama"
