@@ -51,7 +51,8 @@ Nos llega desde administración del cine a nuestro equipo de desarrolladores que
 * La reserva implica el pago de la entrada.
 * Las reservas solo se pueden modificar simpre y cuando se hagan antes de la función.
 
-
+# Diagrama UML
+![Clase UML - Página 3](https://user-images.githubusercontent.com/107365188/174488725-0becaee6-b354-4558-aaf9-2613382af2ca.png)
 # Entregables
 
 ## Checkpoint 1 (Fecha: 13/06 al 16/03)
