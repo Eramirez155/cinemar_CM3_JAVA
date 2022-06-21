@@ -3,13 +3,13 @@ package usuario;
 public class FechaDeNacimiento {
 	private int dia;
 	private int mes;
-	private int año;
+	private int anio;
 	
-	public FechaDeNacimiento(int dia, int mes, int año) {
+	public FechaDeNacimiento(int dia, int mes, int anio) {
 		super();
 		this.dia = dia;
 		this.mes = mes;
-		this.año = año;
+		this.anio = anio;
 	}
 
 	public int getDia() {
@@ -28,17 +28,17 @@ public class FechaDeNacimiento {
 		this.mes = mes;
 	}
 
-	public int getAño() {
-		return año;
+	public int getanio() {
+		return anio;
 	}
 
-	public void setAño(int año) {
-		this.año = año;
+	public void setanio(int anio) {
+		this.anio = anio;
 	}
 
 	@Override
 	public String toString() {
-		return "FechaDeNacimiento [dia=" + dia + ", mes=" + mes + ", año=" + año + "]";
+		return "FechaDeNacimiento [dia=" + dia + ", mes=" + mes + ", anio=" + anio + "]";
 	}
 
 
