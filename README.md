@@ -53,6 +53,9 @@ Nos llega desde administración del cine a nuestro equipo de desarrolladores que
 
 # Diagrama UML 
 ![Clase UML ](https://user-images.githubusercontent.com/107365832/174696711-9089538f-2ac1-45ee-864d-2e1363691e2a.png)
+# Ingenieria reversa
+![EjemploPNG](https://user-images.githubusercontent.com/107365855/174852827-c230b9bb-bf9a-467c-8026-055d26032f31.png)
+
 # Entregables
 
 ## Checkpoint 1 (Fecha: 13/06 al 16/03)
