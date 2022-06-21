@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS universidad;
-CREATE DATABASE universidad CHARACTER SET utf8mb4;
-USE universidad;
+DROP DATABASE IF EXISTS Cinemark;
+CREATE DATABASE Cinemark CHARACTER SET utf8mb4;
+USE Cinemark;
 
