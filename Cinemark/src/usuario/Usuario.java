@@ -10,16 +10,6 @@ public class Usuario {
 	private Date FechaDeNacimiento;
 	private String genero;
 	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
 	public Usuario(Integer id, String nombre, String apellido, String dni, Date fechaDeNacimiento, String genero) {
 		super();
 		this.id = id;
@@ -30,53 +20,13 @@ public class Usuario {
 		this.genero = genero;
 	}
 
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
 	public Integer getId() {
 		return id;
 	}
 
-
-
-
-
-
-
-
-
-
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-
-
-
-
-
-
-
-
 
 
 	public String getNombre() {
@@ -84,140 +34,41 @@ public class Usuario {
 	}
 
 
-
-
-
-
-
-
-
-
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-
-
-
-
-
-
-
-
-
+	 }
 
 	public String getApellido() {
 		return apellido;
 	}
 
-
-
-
-
-
-
-
-
-
-
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	public String getDni() {
 		return dni;
 	}
 
-
-
-
-
-
-
-
-
-
-
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	public Date getFechaDeNacimiento() {
 		return FechaDeNacimiento;
 	}
 
-
-
-
-
-
-
-
-
-
-
 	public void setFechaDeNacimiento(Date fechaDeNacimiento) {
 		FechaDeNacimiento = fechaDeNacimiento;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	public String getGenero() {
 		return genero;
 	}
 
-
-
-
-
-
-
-
-
-
-
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	@Override
 	public String toString() {
@@ -225,21 +76,10 @@ public class Usuario {
 				+ ", FechaDeNacimiento=" + FechaDeNacimiento + ", genero=" + genero + "]";
 	}
 
-
-
-
-
-
-
-
-
-
-
 	public static void main(String[] args) {
-	
-		
-		
-		
+		Date fechaDeNacimiento= new Date(122, 6,23, 2, 30, 30);
+		Usuario persona1 = new Usuario(01, "Mario", "Gutierrez", "20.302.105", fechaDeNacimiento, "Masculino");
+		System.out.println(persona1.toString());
 	}
 		
 }
