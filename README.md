@@ -54,7 +54,7 @@ Nos llega desde administración del cine a nuestro equipo de desarrolladores que
 # Diagrama UML 
 ![Clase UML ](https://user-images.githubusercontent.com/107365832/174696711-9089538f-2ac1-45ee-864d-2e1363691e2a.png)
 # Ingenieria reversa
-![EjemploPNG](https://user-images.githubusercontent.com/107365855/174852827-c230b9bb-bf9a-467c-8026-055d26032f31.png)
+![IngenieriaReversa](https://user-images.githubusercontent.com/107365188/175825812-3b4fe7ec-a684-4247-a928-8d8a10a4a652.png)
 # Diagrama Entidad Relacion
 ![Diagrama1](https://user-images.githubusercontent.com/107365188/175795268-e9b08ec1-50d5-4bee-ba06-92cd09167bfc.svg)
 # Entregables
