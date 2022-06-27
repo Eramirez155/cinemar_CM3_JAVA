@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS Cinemark;
-CREATE DATABASE Cinemark CHARACTER SET utf8mb4;
-USE Cinemark;
+DROP DATABASE IF EXISTS Cinemark2;
+CREATE DATABASE Cinemark2 CHARACTER SET utf8mb4;
+USE Cinemark2;
 
 
 CREATE TABLE tipo_pelicula(
@@ -30,12 +30,36 @@ FOREIGN KEY (id_tipo_pelicula) REFERENCES tipo_pelicula (id_tipo_pelicula),
 FOREIGN KEY (id_clasificacion) REFERENCES clasificacion(id_clasificacion)
 );
 
+CREATE TABLE Sala(
+id_sala INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+numero INT (1) NOT NULL,
+formato VARCHAR (2),
+capacidad INT (3) NOT NULL
+);
 
 CREATE TABLE Descuento(
 id_descuento INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 dia VARCHAR (7) NOT NULL,
 porcentaje FLOAT
 );
+
+CREATE TABLE Butaca(
+id_butacas INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+fila VARCHAR (1) NOT NULL,
+numero INT (2) NOT NULL,
+reservada BOOLEAN,
+id_sala INT NOT NULL,
+FOREIGN KEY (id_sala) REFERENCES Sala (id_sala)
+);
+
+CREATE TABLE Usuario(
+id_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(50) NOT NULL,
+apellido VARCHAR(50) NOT NULL,
+email VARCHAR(50) NOT NULL,
+fecha_nacimiento DATE NOT NULL,
+dni INT
+); 
 
 
 CREATE TABLE Reserva(
@@ -46,28 +70,12 @@ id_butaca INT NOT NULL,
 id_descuento INT NOT NULL,
 id_tarjetaCredito INT NOT NULL,
 id_usuario INT NOT NULL,
-FOREIGN KEY  (id_descuento) REFERENCES  Descuento (id_descuento)
--- FOREIGN KEY  (id_butaca) REFERENCES Butaca (id_butacas)
--- FOREIGN KEY (id_) REFERENCES descuentos (id)
+FOREIGN KEY  (id_descuento) REFERENCES  Descuento (id_descuento),
+FOREIGN KEY  (id_butaca) REFERENCES Butaca (id_butacas),
+FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
 );
 
-CREATE TABLE Butaca(
-id_butacas INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-fila VARCHAR (1) NOT NULL,
-numero INT (2) NOT NULL,
-reservada BOOLEAN,
-id_sala INT NOT NULL
--- FOREIGN KEY (id_sala) REFERENCES Sala (id_sala)
-);
 
-CREATE TABLE Sala(
-id_sala INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-numero INT (1) NOT NULL,
-formato VARCHAR (2),
-capacidad INT (3) NOT NULL,
-id_butacas INT NOT NULL,
-FOREIGN KEY (id_butacas) REFERENCES Butaca (id_butacas)
-);
 
 CREATE TABLE Sesion(
 id_sesion INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -80,14 +88,7 @@ FOREIGN KEY (id_sala) REFERENCES Sala (id_sala)
 
 
 
-CREATE TABLE Usuario(
-id_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nombre VARCHAR(50) NOT NULL,
-apellido VARCHAR(50) NOT NULL,
-email VARCHAR(50) NOT NULL,
-fecha_nacimiento DATE NOT NULL,
-dni INT
-); 
+
 
 
 CREATE TABLE TarjetaCredito(
@@ -129,7 +130,6 @@ FOREIGN KEY (id_usuario) REFERENCES Usuario (id_usuario)
 
 
 -- )
-
 
 
 
