@@ -57,7 +57,7 @@ Nos llega desde administración del cine a nuestro equipo de desarrolladores que
 ![IngenieriaReversa1](https://user-images.githubusercontent.com/107365832/175987784-06f7d019-cda6-46bb-9852-933c702b364f.png)
 
 # Diagrama Entidad Relacion
-![Diagrama drawio](https://user-images.githubusercontent.com/95596561/175830660-5ee601e2-b7f8-44f5-9ae8-39e3e4e99c92.png)
+![Diagrama drawio (1)](https://user-images.githubusercontent.com/107365832/175990785-75b3c6bb-9d63-42fe-9e46-8d01ea35cb38.png)
 # Entregables
 
 ## Checkpoint 1 (Fecha: 13/06 al 16/03)
