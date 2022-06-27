@@ -52,13 +52,26 @@ id_sala INT NOT NULL,
 FOREIGN KEY (id_sala) REFERENCES Sala (id_sala)
 );
 
+CREATE TABLE TarjetaCredito(
+id_tarjetaCredito INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+numero INT NOT NULL,
+balance DOUBLE NOT NULL,
+limite DOUBLE NOT NULL,
+banco VARCHAR (50) NOT NULL
+);
+
+
+
 CREATE TABLE Usuario(
 id_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nombre VARCHAR(50) NOT NULL,
 apellido VARCHAR(50) NOT NULL,
+esAdministrador BOOLEAN NOT NULL,
 email VARCHAR(50) NOT NULL,
 fecha_nacimiento DATE NOT NULL,
-dni INT
+dni INT,
+id_tarjetaCredito INT NOT NULL,
+FOREIGN KEY (id_tarjetaCredito) REFERENCES TarjetaCredito (id_tarjetaCredito)
 ); 
 
 
@@ -72,7 +85,8 @@ id_tarjetaCredito INT NOT NULL,
 id_usuario INT NOT NULL,
 FOREIGN KEY  (id_descuento) REFERENCES  Descuento (id_descuento),
 FOREIGN KEY  (id_butaca) REFERENCES Butaca (id_butacas),
-FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+FOREIGN KEY (id_tarjetaCredito) REFERENCES TarjetaCredito (id_tarjetaCredito)
 );
 
 
@@ -91,15 +105,6 @@ FOREIGN KEY (id_sala) REFERENCES Sala (id_sala)
 
 
 
-CREATE TABLE TarjetaCredito(
-id_tarjetaCredito INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-numero INT NOT NULL,
-balance DOUBLE NOT NULL,
-limite DOUBLE NOT NULL,
-id_usuario INT NOT NULL,
-banco VARCHAR (50) NOT NULL,
-FOREIGN KEY (id_usuario) REFERENCES Usuario (id_usuario)
-);
 
 -- ALTER Reserva ADD FOREIGN KEY (id_butaca) REFERENCES Butaca (id_butacas)
 
