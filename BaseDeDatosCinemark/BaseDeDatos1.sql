@@ -40,7 +40,8 @@ capacidad INT (3) NOT NULL
 CREATE TABLE Descuento(
 id_descuento INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 dia VARCHAR (7) NOT NULL,
-porcentaje FLOAT
+porcentaje FLOAT,
+precioFinal INT NOT NULL
 );
 
 CREATE TABLE Butaca(
@@ -69,9 +70,37 @@ apellido VARCHAR(50) NOT NULL,
 esAdministrador BOOLEAN NOT NULL,
 email VARCHAR(50) NOT NULL,
 fecha_nacimiento DATE NOT NULL,
+dni INT
+); 
+
+CREATE TABLE CrearCuenta(
+id_crearCuenta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(50) NOT NULL,
+apellido VARCHAR(50) NOT NULL,
 dni INT,
+fechaNacimiento DATE NOT NULL,
+nombreUsuarioFicticio VARCHAR(50) NOT NULL,
+contrasenia VARCHAR(50) NOT NULL,
+confirmarContrasenia VARCHAR (50) NOT NULL,
+email VARCHAR(50) NOT NULL,
+genero VARCHAR(50),
+complejoHabitual VARCHAR(50),
+id_usuario INT NOT NULL,
+FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+);
+
+CREATE TABLE InicioSesion(
+id_inicioSesion INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nombreUsuarioFicticio VARCHAR(50) NOT NULL,
+contrasenia VARCHAR(50) NOT NULL,
+confirmarContrasenia VARCHAR (50) NOT NULL,
+email VARCHAR(50) NOT NULL,
+id_crearCuenta INT NOT NULL,
+id_usuario INT NOT NULL,
 id_tarjetaCredito INT NOT NULL,
-FOREIGN KEY (id_tarjetaCredito) REFERENCES TarjetaCredito (id_tarjetaCredito)
+FOREIGN KEY (id_tarjetaCredito) REFERENCES TarjetaCredito (id_tarjetaCredito),
+FOREIGN KEY (id_crearCuenta) REFERENCES CrearCuenta (id_crearCuenta),
+FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
 ); 
 
 
@@ -82,14 +111,12 @@ id_sesion INT NOT NULL,
 id_butaca INT NOT NULL,
 id_descuento INT NOT NULL,
 id_tarjetaCredito INT NOT NULL,
-id_usuario INT NOT NULL,
+id_inicioSesion INT NOT NULL,
 FOREIGN KEY  (id_descuento) REFERENCES  Descuento (id_descuento),
 FOREIGN KEY  (id_butaca) REFERENCES Butaca (id_butacas),
-FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
-FOREIGN KEY (id_tarjetaCredito) REFERENCES TarjetaCredito (id_tarjetaCredito)
+FOREIGN KEY (id_tarjetaCredito) REFERENCES TarjetaCredito (id_tarjetaCredito),
+FOREIGN KEY (id_inicioSesion) REFERENCES InicioSesion (id_inicioSesion)
 );
-
-
 
 CREATE TABLE Sesion(
 id_sesion INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -99,6 +126,17 @@ id_sala INT NOT NULL,
 FOREIGN KEY (id_pelicula) REFERENCES Pelicula (id_pelicula),
 FOREIGN KEY (id_sala) REFERENCES Sala (id_sala)
 ); 
+
+CREATE TABLE Comprobante(
+id_comprobante INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+fechaDeCompra DATE NOT NULL,
+id_reserva INT NOT NULL,
+id_sesion INT NOT NULL,
+FOREIGN KEY (id_reserva) REFERENCES Reserva (id_reserva),
+FOREIGN KEY (id_sesion) REFERENCES Sesion (id_sesion)
+); 
+
+
 
 
 
