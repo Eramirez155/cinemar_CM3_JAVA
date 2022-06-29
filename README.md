@@ -54,7 +54,7 @@ Nos llega desde administración del cine a nuestro equipo de desarrolladores que
 # Diagrama UML 
 ![Clase UML ](https://user-images.githubusercontent.com/107365832/174696711-9089538f-2ac1-45ee-864d-2e1363691e2a.png)
 # Ingenieria reversa
-![IngenieriaReversa1](https://user-images.githubusercontent.com/107365188/176077375-1108ba4a-d573-4143-bf8b-2f045684126f.png)
+![IngenieriaReversa2](https://user-images.githubusercontent.com/107365188/176341389-222d5133-036b-4e22-98f3-c3104d55963c.png)
 
 # Diagrama Entidad Relacion
 ![Diagrama drawio (1)](https://user-images.githubusercontent.com/107365832/175990785-75b3c6bb-9d63-42fe-9e46-8d01ea35cb38.png)
