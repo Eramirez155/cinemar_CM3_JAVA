@@ -42,16 +42,6 @@ public class Sala {
         return "Sala [id_sala=" + id_sala + ", numero=" + numero + ", formato=" + formato + "]";
     }
 
-
-
-	
-	
-	
-	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

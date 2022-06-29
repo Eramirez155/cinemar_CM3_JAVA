@@ -9,14 +9,9 @@ public class Usuario {
 	private Date fecha_nacimiento;
 	private String dni;
 	
-	
-	
 	public Usuario() {
 		
 	}
-	
-	
-	
 	
 	public Usuario(int id_usuario, String nombre, String apellido, boolean esAdministrador, String email,
 			Date fecha_nacimiento, String dni) {
@@ -30,9 +25,6 @@ public class Usuario {
 		this.dni = dni;
 	}
 	
-	public Usuario() {
-	}
-
 	public int getId_usuario() {
 		return id_usuario;
 	}
@@ -102,6 +94,4 @@ public class Usuario {
 		System.out.println(persona1.toString());
 	}
 	
-}	
-	
-
+}

@@ -5,9 +5,7 @@ public class Descuento {
 	    private float porcentaje;
 	    private int precioFinal;
 
-
 	    public Descuento() {}
-
 
 	    public Descuento(int id_descuento, String dia, float porcentaje, int precioFinal) {
 	        super();
@@ -49,18 +47,11 @@ public class Descuento {
 	        this.precioFinal = precioFinal;
 	    }
 
-
-
-	
-	
-	
-	
 	@Override
 		public String toString() {
 			return "Descuento [id_descuento=" + id_descuento + ", dia=" + dia + ", porcentaje=" + porcentaje
 					+ ", precioFinal=" + precioFinal + "]";
 		}
-
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
