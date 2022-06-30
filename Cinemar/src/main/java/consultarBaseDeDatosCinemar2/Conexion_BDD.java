@@ -10,7 +10,7 @@ public class Conexion_BDD {
 		 static final String DB_URL = "jdbc:mysql://localhost:3306/cinemark2";
 	 // Credenciales de la BDD
 		 static final String USER = "root";
-		 static final String PASS = "root";
+		 static final String PASS = "Heracles159753";
 
 	public static void main(String args[]) {
 		 Connection conn = null;
