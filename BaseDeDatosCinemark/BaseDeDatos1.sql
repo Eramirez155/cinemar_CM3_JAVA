@@ -2,8 +2,8 @@ DROP DATABASE IF EXISTS Cinemark2;
 CREATE DATABASE Cinemark2 CHARACTER SET utf8mb4;
 USE Cinemark2;
 
-CREATE TABLE tipo_pelicula(
-id_tipo_pelicula INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Tipo_Pelicula(
+id_Tipo_Pelicula INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 idioma VARCHAR(15),
 formato VARCHAR(3),
 subtitulada BOOLEAN
@@ -11,8 +11,8 @@ subtitulada BOOLEAN
 
 CREATE TABLE Clasificacion(
 id_clasificacion INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-identificador INTEGER,
-descripcion VARCHAR (6)
+identificador VARCHAR(5),
+descripcion VARCHAR (15)
 );
 
 CREATE TABLE Pelicula(
@@ -23,9 +23,9 @@ genero VARCHAR(10),
 duracion VARCHAR(10),
 actores VARCHAR (100),
 director VARCHAR (15),
-id_tipo_pelicula INT NOT NULL,
+id_Tipo_Pelicula INT NOT NULL,
 id_clasificacion INT NOT NULL,
-FOREIGN KEY (id_tipo_pelicula) REFERENCES tipo_pelicula (id_tipo_pelicula),
+FOREIGN KEY (id_Tipo_Pelicula) REFERENCES Tipo_Pelicula (id_Tipo_Pelicula),
 FOREIGN KEY (id_clasificacion) REFERENCES clasificacion(id_clasificacion)
 );
 
