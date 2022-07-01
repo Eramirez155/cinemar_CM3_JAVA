@@ -1,4 +1,3 @@
-use cinemark2;
 INSERT INTO Tipo_Pelicula
 VALUES
 ('1', 'Castellano', '2D', '0'), 
@@ -134,3 +133,17 @@ VALUES
 ('5', '2022-07-23', '5', '5'),
 ('6', '2022-07-23', '6', '6')
 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

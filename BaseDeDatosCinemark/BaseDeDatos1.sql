@@ -12,17 +12,17 @@ subtitulada BOOLEAN
 CREATE TABLE Clasificacion(
 id_clasificacion INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 identificador VARCHAR(5),
-descripcion VARCHAR (15)
+descripcion VARCHAR (100)
 );
 
 CREATE TABLE Pelicula(
 id_pelicula INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-titulo_Pelicula VARCHAR(15),
-sinopsis VARCHAR(100),
-genero VARCHAR(10),
+titulo_Pelicula VARCHAR(50),
+sinopsis VARCHAR(300),
+genero VARCHAR(50),
 duracion VARCHAR(7),
 actores VARCHAR (100),
-director VARCHAR (15),
+director VARCHAR (50),
 id_Tipo_Pelicula INT NOT NULL,
 id_clasificacion INT NOT NULL,
 FOREIGN KEY (id_Tipo_Pelicula) REFERENCES Tipo_Pelicula (id_Tipo_Pelicula),
@@ -38,7 +38,7 @@ capacidad INT (3) NOT NULL
 
 CREATE TABLE Descuento(
 id_descuento INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-dia VARCHAR (7) NOT NULL,
+dia VARCHAR (15) NOT NULL,
 porcentaje FLOAT,
 precioFinal INT NOT NULL
 );
@@ -54,7 +54,7 @@ FOREIGN KEY (id_sala) REFERENCES Sala (id_sala)
 
 CREATE TABLE TarjetaCredito(
 id_tarjetaCredito INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-numero INT NOT NULL,
+numero VARCHAR(50) NOT NULL,
 balance DOUBLE NOT NULL,
 limite DOUBLE NOT NULL,
 banco VARCHAR (50) NOT NULL
@@ -74,7 +74,7 @@ CREATE TABLE CrearCuenta(
 id_crearCuenta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nombre VARCHAR(50) NOT NULL,
 apellido VARCHAR(50) NOT NULL,
-dni INT,
+dni VARCHAR(50) NOT NULL,
 fechaNacimiento DATE NOT NULL,
 nombreUsuarioFicticio VARCHAR(50) NOT NULL,
 contrasenia VARCHAR(50) NOT NULL,
