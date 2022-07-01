@@ -30,7 +30,6 @@ VALUES
 ('6', 'Dog un salvaje viaje', 'Un miembro del Ejército, junto a una perra llamada Lulu, recorre la costa del Pacífico para llegar al funeral de un soldado.', 'Drama', '1h 41m','Channing Tatum, Jane Adams, Qorianka Kilcher','Reid Carolin', id_Tipo_Pelicula, id_clasificacion)
 ;
 
-
 INSERT INTO Sala
 VALUES
 ('1', '1', '2D', '150'),
@@ -68,11 +67,70 @@ VALUES
 
 INSERT INTO TarjetaCredito
 VALUES
-('1', '1526152615264859', '50000', '2000', 'Santand
-('3', '9865457898865', '4D', '50')
-;INSERT INTO Usuario 
+('1', '1526152615264859', '50000', '2000', 'Santander')
+('2', '1526152615264859', '25000', '1500', 'Visa')
+('3', '1526152615264859', '80000', '4000', 'MasterCard')
+('4', '1526152615264859', '100000', '6000', 'Cabal')
+('5', '1526152615264859', '10000', '1000', 'Naranja')
+('6', '1526152615264859', '9000', '900', 'SuCredito')
+;
+
+INSERT INTO Usuario 
 VALUES
-('1', '1', '12','0','1'),
-('2', '1', '5','1','1')
-ALUES
-,',,'
+('1', 'Mario', 'Ponce','0','mario5@gmail.com','98, 4,17, 15, 30, 30','41327605'), --Revisar si asi se escriben las fechas
+('2', 'Leandro', 'Alani','1','Alani23@yahoo.com.ar','72, 9,23, 18, 59, 40','20910483'),
+('3', 'Matias', 'Martines','0','Mat88@gmail.com','83, 12,9, 1, 1, 30','33266388'),
+('4', 'Valeria', 'Espindola','0','ValEspindola@gmail.com','75, 1,22, 22, 45, 50','27701408'),
+('5', 'Viviana', 'Ramires','0','Vivi9@yahoo.com.ar','96, 7,18, 20, 30, 50','40202346'),
+('6', 'Tamara', 'Delgado','1','TamaraDel@gmail.com','85, 10,27, 0, 15, 00','35796500'),
+;
+--Revisar que hacer con las FOREIGN KEYS
+INSERT INTO CrearCuenta 
+VALUES
+('1', 'Mario', 'Ponce','0','41327605','98, 4,17, 15, 30, 30','Cuervo88','gon480','gon480','mario5@gmail.com','masculino','Hoyts Salta',id_usuario),
+('2', 'Leandro', 'Alani','1','20910483','72, 9,23, 18, 59, 40','German','qwerty','qwerty','Alani23@yahoo.com.ar','masculino','Cinemark Salta',id_usuario),
+('3', 'Matias', 'Martines','0','33266388','83, 12,9, 1, 1, 30','IceWelder','123456','123456','Mat88@gmail.com','otro','Hoyts Salta',id_usuario),
+('4', 'Valeria', 'Espindola','0','27701408','75, 1,22, 22, 45, 50','Valeria303','abc123','abc123','ValEspindola@gmail.com','prefiero no indicar','Hoyts Salta',id_usuario),
+('5', 'Viviana', 'Ramires','0','40202346','96, 7,18, 20, 30, 50','Vivian','password','password','Vivi9@yahoo.com.ar','femenino','Cinemark Salta',id_usuario),
+('6', 'Tamara', 'Delgado','1','35796500','85, 10,27, 0, 15, 00','Palmerita25','Tamara190','Tamara190','TamaraDel@gmail.com','femenino','Cinemark Salta',id_usuario),
+;
+
+INSERT INTO InicioSesion 
+VALUES
+('1','Cuervo88','gon480','gon480','mario5@gmail.com',id_crearCuenta,id_usuario,id_tarjetaCredito),
+('2','German','qwerty','qwerty','Alani23@yahoo.com.ar',id_crearCuenta,id_usuario,id_tarjetaCredito),
+('3','IceWelder','123456','123456','Mat88@gmail.com',id_crearCuenta,id_usuario,id_tarjetaCredito),
+('4','Valeria303','abc123','abc123','ValEspindola@gmail.com',id_crearCuenta,id_usuario,id_tarjetaCredito),
+('5','Vivian','password','password','Vivi9@yahoo.com.ar',id_crearCuenta,id_usuario,id_tarjetaCredito),
+('6','Palmerita25','Tamara190','Tamara190','TamaraDel@gmail.com',id_crearCuenta,id_usuario,id_tarjetaCredito),
+;
+
+INSERT INTO Sesion
+VALUES
+('1', '122, 6,25, 12, 30, 00', id_pelicula,id_sala),
+('2', '122, 6,30, 14, 00, 00', id_pelicula,id_sala)
+('3', '122, 6,20, 22, 30, 00', id_pelicula, id_sala)
+('4', '122, 7,1, 10, 00, 00', id_pelicula, id_sala)
+('5', '122, 7,2, 17, 30, 00', id_pelicula, id_sala)
+('6', '122, 7,3, 8, 00, 00', id_pelicula, id_sala)
+;
+
+INSERT INTO Reserva 
+VALUES
+('1', '6', id_sesion,id_butaca,id_descuento,id_tarjetaCredito,id_inicioSesion),
+('2', '5', id_sesion,id_butaca,id_descuento,id_tarjetaCredito,id_inicioSesion)
+('3', '3', id_sesion, id_butaca, id_descuento,id_tarjetaCredito,id_inicioSesion)
+('4', '1', id_sesion, id_butaca, id_descuento,id_tarjetaCredito,id_inicioSesion)
+('5', '4', id_sesion, id_butaca, id_descuento,id_tarjetaCredito,id_inicioSesion)
+('6', '2', id_sesion, id_butaca, id_descuento,id_tarjetaCredito,id_inicioSesion)
+;
+
+INSERT INTO Comprobante
+VALUES
+('1', '122, 6,23, 2, 30, 30', id_reserva,id_sesion),
+('2', '122, 6,23, 2, 30, 30', id_reserva,id_sesion)
+('3', '122, 6,23, 2, 30, 30', id_reserva, id_sesion)
+('4', '122, 6,23, 2, 30, 30', id_reserva, id_sesion)
+('5', '122, 6,23, 2, 30, 30', id_reserva, id_sesion)
+('6', '122, 6,23, 2, 30, 30', id_reserva, id_sesion)
+;
