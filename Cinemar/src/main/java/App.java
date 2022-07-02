@@ -7,7 +7,7 @@ import org.apache.log4j.PropertyConfigurator;
 
 public class App{
    public static void main(String[]args){
-	   String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; // cambien el path
+	   String log4jConfPath = "C:\\Users\\milag\\OneDrive\\Escritorio\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; // cambien el path
 	   PropertyConfigurator.configure(log4jConfPath);
        Gson mapper= new Gson();
        // port(8080);
