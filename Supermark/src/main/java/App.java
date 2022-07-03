@@ -5,7 +5,7 @@ public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String log4jConfPath = "E:\\cinemar_CM3_JAVA\\Supermark\\to\\log4j.properties";
+		String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Supermark\\to\\log4j.properties";
 		   PropertyConfigurator.configure(log4jConfPath);
 		port(8080);
 		
@@ -18,6 +18,7 @@ public class App {
 				+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n"
 				+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n"
 				+ "    <title>Document</title>\r\n"
+				+ "    <link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\">\r\n"
 				+ "</head>\r\n"
 				+ "<body>\r\n"
 				+ "<form action=\"\" method=\"get\">\r\n"
