@@ -5,15 +5,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import credencialesGlobales.Credenciales;
+
 public class IngresarValoresALaBBDDesdeJava {
 	
-	//  Registrar JDBC Driver
+	static //  Registrar JDBC Driver
 	// JDBC nombre del driver y URL de la BDD
-		 static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver"; 
-		 static final String DB_URL = "jdbc:mysql://localhost:3306/cinemark2";
+		Credenciales mi_credi = new Credenciales();
+		 static final String JDBC_DRIVER = mi_credi.JDBC_DRIVER; 
+		 static final String DB_URL = mi_credi.DB_URL;
 	 // Credenciales de la BDD
-		 static final String USER = "root";
-		 static final String PASS = "lasonrriza";
+		 static final String USER = mi_credi.USER;
+		 static final String PASS = mi_credi.PASS;
 
 	public static void main(String args[]) {
 		 Connection conn = null;
