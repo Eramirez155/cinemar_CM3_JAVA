@@ -1,3 +1,4 @@
+package constructoresClaseCinemar;
 
 public class Reserva {
 private int id_reserva;

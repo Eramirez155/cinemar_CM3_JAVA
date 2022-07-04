@@ -1,3 +1,4 @@
+package constructoresClaseCinemar;
 
 public class Pelicula {
 	private int id_pelicula;

@@ -1,3 +1,4 @@
+package constructoresClaseCinemar;
 
 public class Butaca {
 	private int id_butacas;

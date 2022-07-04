@@ -1,6 +1,7 @@
+package constructoresClaseCinemar;
 
 public class TipoPelicula {
-	private int id_tipo_pelicula;
+	private int id_Tipo_Pelicula;
 	private String idioma;
 	private String formato;
 	private boolean subtitulada;
@@ -9,20 +10,20 @@ public class TipoPelicula {
 		
 	}
 	
-	public TipoPelicula(int id_tipo_pelicula, String idioma, String formato, boolean subtitulada) {
+	public TipoPelicula(int id_Tipo_Pelicula, String idioma, String formato, boolean subtitulada) {
 		super();
-		this.id_tipo_pelicula = id_tipo_pelicula;
+		this.id_Tipo_Pelicula = id_Tipo_Pelicula;
 		this.idioma = idioma;
 		this.formato = formato;
 		this.subtitulada = subtitulada;
 	}
 
-	public int getId_tipo_pelicula() {
-		return id_tipo_pelicula;
+	public int getid_Tipo_Pelicula() {
+		return id_Tipo_Pelicula;
 	}
 
-	public void setId_tipo_pelicula(int id_tipo_pelicula) {
-		this.id_tipo_pelicula = id_tipo_pelicula;
+	public void setid_Tipo_Pelicula(int id_Tipo_Pelicula) {
+		this.id_Tipo_Pelicula = id_Tipo_Pelicula;
 	}
 
 	public String getIdioma() {
@@ -51,7 +52,7 @@ public class TipoPelicula {
 
 	@Override
 	public String toString() {
-		return "TipoPelicula [id_tipo_pelicula=" + id_tipo_pelicula + ", idioma=" + idioma + ", formato=" + formato
+		return "TipoPelicula [id_Tipo_Pelicula=" + id_Tipo_Pelicula + ", idioma=" + idioma + ", formato=" + formato
 				+ ", subtitulada=" + subtitulada + "]";
 	}
 

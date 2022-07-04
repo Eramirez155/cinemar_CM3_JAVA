@@ -1,3 +1,4 @@
+package constructoresClaseCinemar;
 
 public class TarjetaCredito {
 	private int id_tarjetaCredito;

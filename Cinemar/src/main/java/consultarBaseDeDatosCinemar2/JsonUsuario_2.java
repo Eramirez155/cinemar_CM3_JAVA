@@ -7,6 +7,8 @@ import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import credencialesGlobales.Credenciales;
+
 import java.util.ArrayList;
 
 import org.apache.log4j.PropertyConfigurator;

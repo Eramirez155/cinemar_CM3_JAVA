@@ -1,11 +1,29 @@
 package consultarBaseDeDatosCinemar2;
-
+//import constructoresClaseCinemar.*;
+//import static spark.Spark.get;
+//
+//import java.sql.*;
+//import java.util.ArrayList;
+//
+//import org.json.JSONObject;
+//
+//import com.google.gson.Gson;
+//
+//import credencialesGlobales.Credenciales;
+//
+//import org.apache.log4j.PropertyConfigurator;
+//import org.json.JSONException;
 import static spark.Spark.get;
 
 import java.sql.*;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
+
+import constructoresClaseCinemar.TipoPelicula;
+import credencialesGlobales.Credenciales;
+
+import java.util.ArrayList;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.json.JSONException;
@@ -25,6 +43,8 @@ public class JsonTipoPelicula {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<TipoPelicula> mis_tipo = new ArrayList();
+		 
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -46,14 +66,15 @@ public class JsonTipoPelicula {
 			 int id_Tipo_Pelicula = rs.getInt("id_Tipo_Pelicula");
 			 String idioma = rs.getString("idioma");
 			 String formato = rs.getString("formato");
-			 String subtitulada = rs.getString("subtitulada");
+			 boolean subtitulada = rs.getBoolean("subtitulada");
 			 System.out.println("id_Tipo_Pelicula: "+ id_Tipo_Pelicula + " idioma: " + idioma + "formato: " + formato + "subtitulada: " + subtitulada);
 			 
-			 jo.put("id_Tipo_Pelicula", id_Tipo_Pelicula);
-			 jo.put("idioma", idioma);
-			 jo.put("formato", formato);
-			 jo.put("subtitulada", subtitulada);
-			 System.out.println(jo);
+			 
+			 TipoPelicula tipo = new TipoPelicula (id_Tipo_Pelicula, idioma, formato, subtitulada);
+			 mis_tipo.add (tipo);	 
+			 
+			 
+			 
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -81,8 +102,8 @@ public class JsonTipoPelicula {
 		 } //cierra try
 		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/tipoPelicula", (req,res) -> jo);
+		   String json = new Gson().toJson(mis_tipo);
+	      get("/tipo", (req,res) -> jo);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

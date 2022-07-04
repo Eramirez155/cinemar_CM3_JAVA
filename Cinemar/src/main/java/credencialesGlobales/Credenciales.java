@@ -1,4 +1,4 @@
-package consultarBaseDeDatosCinemar2;
+package credencialesGlobales;
 
 public class Credenciales {
 	

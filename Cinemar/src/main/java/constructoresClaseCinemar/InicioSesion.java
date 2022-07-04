@@ -1,3 +1,4 @@
+package constructoresClaseCinemar;
 
 public class InicioSesion {
 	private int id_inicioSesion;

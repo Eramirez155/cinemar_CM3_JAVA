@@ -1,3 +1,4 @@
+package constructoresClaseCinemar;
 
 public class Descuento {
 	 	private int id_descuento;

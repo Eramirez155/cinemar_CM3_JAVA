@@ -1,3 +1,4 @@
+package constructoresClaseCinemar;
 
 public class Sala {
 	private int id_sala;
