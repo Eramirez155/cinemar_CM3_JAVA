@@ -3,10 +3,14 @@ package jsonApi;
 import static spark.Spark.get;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.Pelicula;
+import constructoresClaseCinemar.Usuario;
 import credencialesGlobales.Credenciales;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -27,6 +31,7 @@ public class JsonPelicula {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<Pelicula> mis_peliculas = new ArrayList();
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -56,16 +61,8 @@ public class JsonPelicula {
 			 int id_clasificacion = rs.getInt("id_clasificacion");
 			 System.out.println("id_pelicula: "+ id_pelicula + " titulo_Pelicula: " + titulo_Pelicula + " sinopsis: " + sinopsis + " genero: " +genero + " duracion: " + duracion + " actores: " + actores + " director: " + director + "id_Tipo_Pelicula: "+ id_Tipo_Pelicula +  "id_clasificacion: "+ id_clasificacion);
 			 
-			 jo.put("id_pelicula", id_pelicula);
-			 jo.put("titulo_Pelicula", titulo_Pelicula);
-			 jo.put("sinopsis", sinopsis);
-			 jo.put("genero", genero);
-			 jo.put("duracion", duracion);
-			 jo.put("actores", actores);
-			 jo.put("director", director);
-			 jo.put("id_Tipo_Pelicula", id_Tipo_Pelicula);
-			 jo.put("id_clasificacion", id_clasificacion);
-			 System.out.println(jo);
+			 Pelicula pelicula = new Pelicula(id_pelicula,titulo_Pelicula,sinopsis,genero,duracion,actores,director,id_Tipo_Pelicula,id_clasificacion);
+			 mis_peliculas.add(pelicula); 
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -91,10 +88,10 @@ public class JsonPelicula {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		 String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/pelicula", (req,res) -> jo);
+		  String json = new Gson().toJson(mis_peliculas);
+	      get("/pelicula", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

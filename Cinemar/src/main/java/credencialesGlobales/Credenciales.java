@@ -14,8 +14,8 @@ public class Credenciales {
 		 this.JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 		 this.DB_URL = "jdbc:mysql://localhost:3306/cinemark2";
 		 this.USER = "root";
-		 this.PASS = "lasonrriza";
-		 this.PATH = "C:\\Users\\milag\\OneDrive\\Escritorio\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties";
+		 this.PASS = "Heracles159753";
+		 this.PATH = "E:\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties";
 	 }
 
 }

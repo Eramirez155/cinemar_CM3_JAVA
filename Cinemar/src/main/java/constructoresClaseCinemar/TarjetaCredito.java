@@ -2,7 +2,7 @@ package constructoresClaseCinemar;
 
 public class TarjetaCredito {
 	private int id_tarjetaCredito;
-	private int numero;
+	private String numero;
 	private double balance;
 	private double limite;
 	private String banco;
@@ -11,7 +11,7 @@ public class TarjetaCredito {
 	
 	}
 	
-	public TarjetaCredito(int id_tarjetaCredito, int numero, double balance, double limite, String banco) {
+	public TarjetaCredito(int id_tarjetaCredito, String numero, double balance, double limite, String banco) {
 		super();
 		this.id_tarjetaCredito = id_tarjetaCredito;
 		this.numero = numero;
@@ -28,11 +28,11 @@ public class TarjetaCredito {
 		this.id_tarjetaCredito = id_tarjetaCredito;
 	}
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 

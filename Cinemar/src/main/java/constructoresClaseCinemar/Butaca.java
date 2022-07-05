@@ -5,13 +5,13 @@ public class Butaca {
 	private String fila;
 	private int numero;
 	private boolean reservada;
-	private Sala id_sala;
+	private int id_sala;
 	
 	public Butaca() {
 		
 	}
 	
-	public Butaca(int id_butacas, String fila, int numero, boolean reservada, Sala id_sala) {
+	public Butaca(int id_butacas, String fila, int numero, boolean reservada, int id_sala) {
 		super();
 		this.id_butacas = id_butacas;
 		this.fila = fila;
@@ -52,11 +52,11 @@ public class Butaca {
 		this.reservada = reservada;
 	}
 
-	public Sala getId_sala() {
+	public int getId_sala() {
 		return id_sala;
 	}
 
-	public void setId_sala(Sala id_sala) {
+	public void setId_sala(int id_sala) {
 		this.id_sala = id_sala;
 	}
 

@@ -3,10 +3,14 @@ package jsonApi;
 import static spark.Spark.get;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.TarjetaCredito;
+import constructoresClaseCinemar.Usuario;
 import credencialesGlobales.Credenciales;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -27,6 +31,7 @@ public class JsonTarjetaCredito {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<TarjetaCredito> mis_tarjetas = new ArrayList();
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -52,12 +57,8 @@ public class JsonTarjetaCredito {
 			 String banco = rs.getString("banco");
 			 System.out.println("id_tarjetaCredito: "+ id_tarjetaCredito + " numero: " + numero + " balance: " + balance +" limite: " + limite + " banco: " + banco);
 			 
-			 jo.put("id_tarjetaCredito", id_tarjetaCredito);
-			 jo.put("numero", numero);
-			 jo.put("balance", balance);
-			 jo.put("limite", limite);
-			 jo.put("banco", banco);
-			 System.out.println(jo);
+			 TarjetaCredito tarjetacredito = new TarjetaCredito(id_tarjetaCredito,numero,balance,limite,banco);
+			 mis_tarjetas.add(tarjetacredito);
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -83,10 +84,10 @@ public class JsonTarjetaCredito {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		 String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/tarjetacredito", (req,res) -> jo);
+		  String json = new Gson().toJson(mis_tarjetas);
+	      get("/tarjetacredito", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

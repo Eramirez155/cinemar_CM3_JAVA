@@ -1,7 +1,7 @@
 package jsonApi;
-
+import constructoresClaseCinemar.*;
 import static spark.Spark.get;
-
+import java.util.Date;
 import java.sql.*;
 import org.json.JSONObject;
 
@@ -9,9 +9,10 @@ import com.google.gson.Gson;
 
 import credencialesGlobales.Credenciales;
 
+import java.util.ArrayList;
+
 import org.apache.log4j.PropertyConfigurator;
 import org.json.JSONException;
-
 public class JsonButaca {
 	
 	static //  Registrar JDBC Driver
@@ -27,6 +28,7 @@ public class JsonButaca {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<Butaca> mis_butacas = new ArrayList();
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -52,12 +54,8 @@ public class JsonButaca {
 			 int id_sala = rs.getInt("id_sala");
 			 System.out.println("id_butacas: "+ id_butacas + " fila: " + fila + " numero: " + numero + " reservada: " + reservada + " id_sala: " + id_sala);
 			 
-			 jo.put("id_butacas", id_butacas);
-			 jo.put("fila", fila);
-			 jo.put("numero", numero);
-			 jo.put("reservada", reservada);
-			 jo.put("id_sala", id_sala);
-			 System.out.println(jo);
+			Butaca butaca = new Butaca(id_butacas, fila, numero, reservada,id_sala);
+			mis_butacas.add(butaca);
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -83,10 +81,10 @@ public class JsonButaca {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		  String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/butaca", (req,res) -> jo);
+		   String json = new Gson().toJson(mis_butacas);
+	      get("/butaca", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

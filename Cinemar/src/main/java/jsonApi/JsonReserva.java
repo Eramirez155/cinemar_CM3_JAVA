@@ -3,10 +3,14 @@ package jsonApi;
 import static spark.Spark.get;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.Reserva;
+import constructoresClaseCinemar.Usuario;
 import credencialesGlobales.Credenciales;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -27,6 +31,7 @@ public class JsonReserva {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<Reserva> mis_reservas = new ArrayList();
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -54,14 +59,8 @@ public class JsonReserva {
 			 int id_inicioSesion = rs.getInt("id_inicioSesion");
 			 System.out.println("id_reserva: "+ id_reserva + " cantidadDeEntradas: " + cantidadDeEntradas + " id_sesion: " + id_sesion + " id_butaca: " +id_butaca+" id_descuento: " + id_descuento+ " id_tarjetaCredito: " + id_tarjetaCredito+ " id_inicioSesion: " + id_inicioSesion);
 			 
-			 jo.put("id_reserva", id_reserva);
-			 jo.put("cantidadDeEntradas", cantidadDeEntradas);
-			 jo.put("id_sesion", id_sesion);
-			 jo.put("id_butaca", id_butaca);
-			 jo.put("id_descuento", id_descuento);
-			 jo.put("id_tarjetaCredito", id_tarjetaCredito);
-			 jo.put("id_inicioSesion", id_inicioSesion);
-			 System.out.println(jo);
+			 Reserva reserva = new Reserva(id_reserva,cantidadDeEntradas,id_sesion,id_butaca,id_descuento,id_tarjetaCredito,id_inicioSesion);
+			 mis_reservas.add(reserva);
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -87,10 +86,10 @@ public class JsonReserva {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		 String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/reserva", (req,res) -> jo);
+		  String json = new Gson().toJson(mis_reservas);
+	      get("/reserva", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

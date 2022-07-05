@@ -7,11 +7,13 @@ import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.Sala;
 import credencialesGlobales.Credenciales;
+
+import java.util.ArrayList;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.json.JSONException;
-
 public class JsonSala {
 	
 	static //  Registrar JDBC Driver
@@ -27,6 +29,9 @@ public class JsonSala {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 
+		 ArrayList<Sala> mis_salas = new ArrayList();
+		 	 
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -51,11 +56,10 @@ public class JsonSala {
 			 int capacidad = rs.getInt("capacidad");
 			 System.out.println("id_sala: "+ id_sala + " numero: " + numero + " formato: " + formato +" capacidad: " + capacidad);
 			 
-			 jo.put("id_sala", id_sala);
-			 jo.put("numero", numero);
-			 jo.put("formato", formato);
-			 jo.put("capacidad", capacidad);
-			 System.out.println(jo);
+			 Sala mi_sala = new Sala(id_sala, numero, formato, capacidad);
+			 mis_salas.add(mi_sala); 
+			 
+
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -81,10 +85,10 @@ public class JsonSala {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		  String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/sala", (req,res) -> jo);
+		  String json = new Gson().toJson(mis_salas);
+	      get("/sala", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

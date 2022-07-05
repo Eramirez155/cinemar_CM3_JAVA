@@ -1,12 +1,16 @@
 package jsonApi;
 
 import static spark.Spark.get;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.sql.*;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.Comprobante;
+import constructoresClaseCinemar.Usuario;
 import credencialesGlobales.Credenciales;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -27,6 +31,7 @@ public class JsonComprobante {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<Comprobante> mis_comprobantes = new ArrayList();
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -51,11 +56,8 @@ public class JsonComprobante {
 			 int id_sesion = rs.getInt("id_sesion");
 			 System.out.println("id_comprobante: "+ id_comprobante + " fechaDeCompra: " + fechaDeCompra + " id_reserva: " + id_reserva +" id_sesion: " +id_sesion);
 			 
-			 jo.put("id_comprobante", id_comprobante);
-			 jo.put("fechaDeCompra", fechaDeCompra);
-			 jo.put("id_reserva", id_reserva);
-			 jo.put("id_sesion", id_sesion);
-			 System.out.println(jo);
+			 Comprobante comprobante = new Comprobante(id_comprobante,fechaDeCompra,id_reserva,id_sesion);
+			 mis_comprobantes.add(comprobante); 
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -81,10 +83,10 @@ public class JsonComprobante {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		 String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/comprobante", (req,res) -> jo);
+		  String json = new Gson().toJson(mis_comprobantes);
+	      get("/comprobante", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

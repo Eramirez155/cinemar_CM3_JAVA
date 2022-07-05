@@ -8,15 +8,15 @@ public class Pelicula {
 	private String duracion;
 	private String actores;
 	private String director;
-	private TipoPelicula id_tipo_pelicula;
-	private Clasificacion id_clasificacion;
+	private int id_tipo_pelicula;
+	private int id_clasificacion;
 	
 	public Pelicula() {
 		
 	}
 	
 	public Pelicula(int id_pelicula, String titulo_Pelicula, String sinopsis, String genero, String duracion,
-			String actores, String director, TipoPelicula id_tipo_pelicula, Clasificacion id_clasificacion) {
+			String actores, String director, int id_tipo_pelicula, int id_clasificacion) {
 		super();
 		this.id_pelicula = id_pelicula;
 		this.titulo_Pelicula = titulo_Pelicula;
@@ -85,19 +85,19 @@ public class Pelicula {
 		this.director = director;
 	}
 
-	public TipoPelicula getId_tipo_pelicula() {
+	public int getId_tipo_pelicula() {
 		return id_tipo_pelicula;
 	}
 
-	public void setId_tipo_pelicula(TipoPelicula id_tipo_pelicula) {
+	public void setId_tipo_pelicula(int id_tipo_pelicula) {
 		this.id_tipo_pelicula = id_tipo_pelicula;
 	}
 
-	public Clasificacion getId_clasificacion() {
+	public int getId_clasificacion() {
 		return id_clasificacion;
 	}
 
-	public void setId_clasificacion(Clasificacion id_clasificacion) {
+	public void setId_clasificacion(int id_clasificacion) {
 		this.id_clasificacion = id_clasificacion;
 	}
 

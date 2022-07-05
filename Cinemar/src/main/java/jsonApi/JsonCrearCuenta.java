@@ -1,12 +1,16 @@
 package jsonApi;
 
 import static spark.Spark.get;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.sql.*;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.CrearCuenta;
+import constructoresClaseCinemar.Usuario;
 import credencialesGlobales.Credenciales;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -27,6 +31,7 @@ public class JsonCrearCuenta {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<CrearCuenta> mis_cuentas = new ArrayList();
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -59,19 +64,8 @@ public class JsonCrearCuenta {
 			 int id_usuario = rs.getInt("id_usuario");
 			 System.out.println("id_crearCuenta: "+ id_crearCuenta + " nombre: " + nombre + " apellido: " + apellido + " dni: " +dni+" fechaNacimiento: " + fechaNacimiento+ " nombreUsuarioFicticio: " + nombreUsuarioFicticio+ " contrasenia: " + contrasenia+ " confirmarContrasenia: " + confirmarContrasenia  +" email: " +email+ " genero: " + genero +" complejoHabitual: " +complejoHabitual+" id_usuario: " +id_usuario);
 			 
-			 jo.put("id_crearCuenta", id_crearCuenta);
-			 jo.put("nombre", nombre);
-			 jo.put("apellido", apellido);
-			 jo.put("dni", dni);
-			 jo.put("fechaNacimiento", fechaNacimiento);
-			 jo.put("nombreUsuarioFicticio", nombreUsuarioFicticio);
-			 jo.put("contrasenia", contrasenia);
-			 jo.put("confirmarContrasenia", confirmarContrasenia);
-			 jo.put("email", email);
-			 jo.put("genero", genero);
-			 jo.put("complejoHabitual", complejoHabitual);
-			 jo.put("id_usuario", id_usuario);
-			 System.out.println(jo);
+			 CrearCuenta crearcuenta = new CrearCuenta(id_crearCuenta,nombre,apellido,dni,fechaNacimiento,nombreUsuarioFicticio,contrasenia,confirmarContrasenia,email,genero,complejoHabitual,id_usuario);
+			 mis_cuentas.add(crearcuenta); 
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -97,10 +91,10 @@ public class JsonCrearCuenta {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		  String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/crearcuenta", (req,res) -> jo);
+		  String json = new Gson().toJson(mis_cuentas);
+	      get("/crearcuenta", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

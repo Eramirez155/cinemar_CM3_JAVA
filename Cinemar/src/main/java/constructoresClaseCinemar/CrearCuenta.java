@@ -5,7 +5,7 @@ public class CrearCuenta {
 	private int id_crearCuenta;
 	private String nombre;
 	private String apellido;
-	private int dni;
+	private String dni;
 	private Date fechaNacimiento;
 	private String nombreUsuarioFicticio;
 	private String contrasenia;
@@ -13,15 +13,15 @@ public class CrearCuenta {
 	private String email;
 	private String genero;
 	private String complejoHabitual;
-	private InicioSesion id_usuario;
+	private int id_usuario;
 	
 	public CrearCuenta() {
 		
 	}
 	
-	public CrearCuenta(int id_crearCuenta, String nombre, String apellido, int dni, Date fechaNacimiento,
+	public CrearCuenta(int id_crearCuenta, String nombre, String apellido, String dni, Date fechaNacimiento,
 			String nombreUsuarioFicticio, String contrasenia, String confirmarContrasenia, String email, String genero,
-			String complejoHabitual, InicioSesion id_usuario) {
+			String complejoHabitual, int id_usuario) {
 		super();
 		this.id_crearCuenta = id_crearCuenta;
 		this.nombre = nombre;
@@ -61,11 +61,11 @@ public class CrearCuenta {
 		this.apellido = apellido;
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
@@ -125,11 +125,11 @@ public class CrearCuenta {
 		this.complejoHabitual = complejoHabitual;
 	}
 
-	public InicioSesion getId_usuario() {
+	public int getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(InicioSesion id_usuario) {
+	public void setId_usuario(int id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 

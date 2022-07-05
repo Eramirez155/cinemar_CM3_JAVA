@@ -7,7 +7,11 @@ import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.Descuento;
+import constructoresClaseCinemar.Usuario;
 import credencialesGlobales.Credenciales;
+
+import java.util.ArrayList;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.json.JSONException;
@@ -27,6 +31,9 @@ public class JsonDescuento {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<Descuento> mis_descuentos = new ArrayList();
+		 
+		 
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -51,11 +58,10 @@ public class JsonDescuento {
 			 int precioFinal = rs.getInt("precioFinal");
 			 System.out.println("id_descuento: "+ id_descuento + " dia: " + dia + " porcentaje: " + porcentaje + "%"+" precioFinal: " + "$"+precioFinal);
 			 
-			 jo.put("id_descuento", id_descuento);
-			 jo.put("dia", dia);
-			 jo.put("porcentaje", porcentaje);
-			 jo.put("precio_final", precioFinal);
-			 System.out.println(jo);
+			 Descuento mi_descuento = new Descuento(id_descuento, dia, porcentaje, precioFinal);
+			 mis_descuentos.add(mi_descuento); 
+			 
+
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -81,10 +87,10 @@ public class JsonDescuento {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		  String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/consulta", (req,res) -> jo);
+		  String json = new Gson().toJson(mis_descuentos);
+	      get("/descuento", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

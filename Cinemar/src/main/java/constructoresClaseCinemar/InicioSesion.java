@@ -6,16 +6,16 @@ public class InicioSesion {
 	private String contrasenia;
 	private String confirmarContrasenia;
 	private String email;
-	private CrearCuenta id_crearCuenta;
-	private Usuario id_usuario;
-	private TarjetaCredito id_tarjetaCredito;
+	private int id_crearCuenta;
+	private int id_usuario;
+	private int id_tarjetaCredito;
 
 	public InicioSesion() {
 	}
 	
 	public InicioSesion(int id_inicioSesion, String nombreUsuarioFicticio, String contrasenia,
-			String confirmarContrasenia, String email, CrearCuenta id_crearCuenta, Usuario id_usuario,
-			TarjetaCredito id_tarjetaCredito) {
+			String confirmarContrasenia, String email, int id_crearCuenta, int id_usuario,
+			int id_tarjetaCredito) {
 		super();
 		this.id_inicioSesion = id_inicioSesion;
 		this.nombreUsuarioFicticio = nombreUsuarioFicticio;
@@ -67,27 +67,27 @@ public class InicioSesion {
 		this.email = email;
 	}
 
-	public CrearCuenta getId_crearCuenta() {
+	public int getId_crearCuenta() {
 		return id_crearCuenta;
 	}
 
-	public void setId_crearCuenta(CrearCuenta id_crearCuenta) {
+	public void setId_crearCuenta(int id_crearCuenta) {
 		this.id_crearCuenta = id_crearCuenta;
 	}
 
-	public Usuario getId_usuario() {
+	public int getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(Usuario id_usuario) {
+	public void setId_usuario(int id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 
-	public TarjetaCredito getId_tarjetaCredito() {
+	public int getId_tarjetaCredito() {
 		return id_tarjetaCredito;
 	}
 
-	public void setId_tarjetaCredito(TarjetaCredito id_tarjetaCredito) {
+	public void setId_tarjetaCredito(int id_tarjetaCredito) {
 		this.id_tarjetaCredito = id_tarjetaCredito;
 	}
 

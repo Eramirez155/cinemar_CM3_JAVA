@@ -3,13 +3,13 @@ package constructoresClaseCinemar;
 public class Clasificacion {
 
 	 private int id_clasificacion;
-	    private int identificador;
+	    private String identificador;
 	    private String descripcion;
 
 	    public Clasificacion () 
 	    {}
 
-	    public Clasificacion(int id_clasificacion, int identificador, String descripcion) {
+	    public Clasificacion(int id_clasificacion, String identificador, String descripcion) {
 	        super();
 	        this.id_clasificacion = id_clasificacion;
 	        this.identificador = identificador;
@@ -24,11 +24,11 @@ public class Clasificacion {
 	        this.id_clasificacion = id_clasificacion;
 	    }
 
-	    public int getIdentificador() {
+	    public String getIdentificador() {
 	        return identificador;
 	    }
 
-	    public void setIdentificador(int identificador) {
+	    public void setIdentificador(String identificador) {
 	        this.identificador = identificador;
 	    }
 

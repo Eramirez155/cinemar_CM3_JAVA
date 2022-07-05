@@ -4,14 +4,14 @@ import java.util.Date;
 public class Sesion {
 	private int id_sesion;
 	private Date fecha;
-	private Pelicula id_pelicula;
-	private Sala id_sala;
+	private int id_pelicula;
+	private int id_sala;
 	
 	public Sesion() {
 		
 	}
 	
-	public Sesion(int id_sesion, Date fecha, Pelicula id_pelicula, Sala id_sala) {
+	public Sesion(int id_sesion, Date fecha, int id_pelicula, int id_sala) {
 		super();
 		this.id_sesion = id_sesion;
 		this.fecha = fecha;
@@ -35,19 +35,19 @@ public class Sesion {
 		this.fecha = fecha;
 	}
 
-	public Pelicula getId_pelicula() {
+	public int getId_pelicula() {
 		return id_pelicula;
 	}
 
-	public void setId_pelicula(Pelicula id_pelicula) {
+	public void setId_pelicula(int id_pelicula) {
 		this.id_pelicula = id_pelicula;
 	}
 
-	public Sala getId_sala() {
+	public int getId_sala() {
 		return id_sala;
 	}
 
-	public void setId_sala(Sala id_sala) {
+	public void setId_sala(int id_sala) {
 		this.id_sala = id_sala;
 	}
 

@@ -3,10 +3,14 @@ package jsonApi;
 import static spark.Spark.get;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.InicioSesion;
+import constructoresClaseCinemar.Usuario;
 import credencialesGlobales.Credenciales;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -27,6 +31,7 @@ public class JsonInicioSesion {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<InicioSesion> mis_iniciossesion = new ArrayList();
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -55,15 +60,9 @@ public class JsonInicioSesion {
 			 int id_tarjetaCredito = rs.getInt("id_tarjetaCredito");
 			 System.out.println("id_inicioSesion: "+ id_inicioSesion + " nombreUsuarioFicticio: " + nombreUsuarioFicticio + " contrasenia: " + contrasenia +" confirmarContrasenia: " + confirmarContrasenia +  " email: " + email + " id_crearCuenta: " + id_crearCuenta +  " id_usuario: " + id_usuario +  " id_tarjetaCredito: " + id_tarjetaCredito );
 			 
-			 jo.put("id_inicioSesion", id_inicioSesion);
-			 jo.put("nombreUsuarioFicticio", nombreUsuarioFicticio);
-			 jo.put("contrasenia", contrasenia);
-			 jo.put("confirmarContrasenia", confirmarContrasenia);
-			 jo.put("email", email);
-			 jo.put("id_crearCuenta", id_crearCuenta);
-			 jo.put("id_usuario", id_usuario);
-			 jo.put("id_tarjetaCredito", id_tarjetaCredito);
-			 System.out.println(jo);
+
+			 InicioSesion iniciosesion = new InicioSesion(id_inicioSesion,nombreUsuarioFicticio,contrasenia,confirmarContrasenia,email,id_crearCuenta,id_usuario,id_tarjetaCredito);
+			 mis_iniciossesion.add(iniciosesion);
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -89,10 +88,10 @@ public class JsonInicioSesion {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
+		 String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/iniciosesion", (req,res) -> jo);
+		  String json = new Gson().toJson(mis_iniciossesion);
+	      get("/iniciosesion", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

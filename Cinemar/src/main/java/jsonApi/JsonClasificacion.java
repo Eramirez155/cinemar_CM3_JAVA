@@ -3,10 +3,14 @@ package jsonApi;
 import static spark.Spark.get;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import constructoresClaseCinemar.Clasificacion;
+import constructoresClaseCinemar.Usuario;
 import credencialesGlobales.Credenciales;
 
 import org.apache.log4j.PropertyConfigurator;
@@ -27,6 +31,7 @@ public class JsonClasificacion {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
+		 ArrayList<Clasificacion> mis_clasificaciones = new ArrayList();
 		 try{
 		 //PASO 2: Registrar JDBC driver
 		 Class.forName(JDBC_DRIVER);
@@ -50,10 +55,8 @@ public class JsonClasificacion {
 			 String descripcion = rs.getString("descripcion");
 			 System.out.println("id_clasificacion: "+ id_clasificacion + " identificador: " + identificador + " descripcion: " + descripcion );
 			 
-			 jo.put("id_clasificacion", id_clasificacion);
-			 jo.put("identificador", identificador);
-			 jo.put("descripcion", descripcion);
-			 System.out.println(jo);
+			 Clasificacion clasificacion = new Clasificacion(id_clasificacion,identificador,descripcion);
+			 mis_clasificaciones.add(clasificacion); 
 		 }
 		 //PASO6: Entorno de Limpieza
 		 rs.close();
@@ -79,10 +82,10 @@ public class JsonClasificacion {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = "D:\\Familia\\Documentos\\Emanuel\\Proyecto1000Programadores\\cinemar_CM3_JAVA\\Cinemar\\to\\log4j.properties"; //cambiar el path
-		   PropertyConfigurator.configure(log4jConfPath);
-	       Gson mapper= new Gson();
-	      get("/clasificacion", (req,res) -> jo);
+		 String log4jConfPath = mi_credi.PATH; //cambiar el path
+		 PropertyConfigurator.configure(log4jConfPath);
+		  String json = new Gson().toJson(mis_clasificaciones);
+	      get("/clasificacion", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)

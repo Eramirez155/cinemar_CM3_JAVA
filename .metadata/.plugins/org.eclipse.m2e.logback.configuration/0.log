@@ -1246,3 +1246,102 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact xmlenc:xmlenc
 2022-07-04 18:57:34,265 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\milag\OneDrive\Escritorio\cinemar_CM3_JAVA\Cinemar\src\main\resources
 2022-07-04 18:57:34,266 [Worker-13: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-07-04 18:57:34,266 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\milag\OneDrive\Escritorio\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:31:01,874 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-07-04 22:31:04,547 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cinemar:Cinemar:0.0.1-SNAPSHOT @ E:\cinemar_CM3_JAVA\Cinemar\pom.xml.
+2022-07-04 22:31:04,547 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cinemar:Cinemar:0.0.1-SNAPSHOT @ E:\cinemar_CM3_JAVA\Cinemar\pom.xml.
+2022-07-04 22:31:08,733 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:31:08,734 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:31:08,738 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:31:08,741 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:31:09,287 [Worker-4: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cinemar:Cinemar:0.0.1-SNAPSHOT @ E:\cinemar_CM3_JAVA\Cinemar\pom.xml.
+2022-07-04 22:31:09,287 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.supermark:Supermark:0.0.1-SNAPSHOT @ E:\cinemar_CM3_JAVA\Supermark\pom.xml.
+2022-07-04 22:31:10,915 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:31:10,917 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Supermark\src\main\resources
+2022-07-04 22:31:10,919 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:31:10,921 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Supermark\src\test\resources
+2022-07-04 22:31:11,299 [Worker-1: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cinemar:Cinemar:0.0.1-SNAPSHOT @ E:\cinemar_CM3_JAVA\Cinemar\pom.xml.
+2022-07-04 22:31:11,858 [Worker-1: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.supermark:Supermark:0.0.1-SNAPSHOT @ E:\cinemar_CM3_JAVA\Supermark\pom.xml.
+2022-07-04 22:31:14,886 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:31:14,888 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:31:14,892 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:31:14,893 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:31:15,882 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:31:15,883 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Supermark\src\main\resources
+2022-07-04 22:31:15,884 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:31:15,885 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Supermark\src\test\resources
+2022-07-04 22:32:10,868 [Worker-11: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:32:10,871 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:32:10,872 [Worker-11: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:32:10,873 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:32:37,041 [Worker-15: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:32:37,043 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:32:37,045 [Worker-15: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:32:37,046 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:44:16,067 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:44:16,068 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:44:16,070 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:44:16,071 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:44:17,130 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:44:17,131 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:44:17,133 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:44:17,134 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:46:10,734 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:46:10,735 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:46:10,736 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:46:10,737 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:46:17,105 [Worker-26: Launching JsonUsuario_2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:46:17,106 [Worker-26: Launching JsonUsuario_2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:46:17,108 [Worker-26: Launching JsonUsuario_2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:46:17,109 [Worker-26: Launching JsonUsuario_2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:46:18,284 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:46:18,285 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:46:18,286 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:46:18,286 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:48:16,347 [Worker-26: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:48:16,349 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:48:16,350 [Worker-26: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:48:16,351 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:48:52,048 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:48:52,049 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:48:52,051 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:48:52,052 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 22:51:17,973 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:51:17,974 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 22:51:17,974 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 22:51:17,975 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:00:38,110 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:00:38,111 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:00:38,112 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:00:38,112 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:00:39,197 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:00:39,198 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:00:39,199 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:00:39,200 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:04:28,896 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:04:28,896 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:04:28,897 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:04:28,899 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:04:29,917 [Worker-32: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:04:29,918 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:04:29,919 [Worker-32: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:04:29,920 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:05:45,512 [Worker-32: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:05:45,513 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:05:45,513 [Worker-32: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:05:45,514 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:06:43,956 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:06:43,965 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:06:43,968 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:06:43,969 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:07:33,531 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:07:33,532 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:07:33,533 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:07:33,534 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:08:42,613 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:08:42,614 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:08:42,614 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:08:42,615 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources
+2022-07-04 23:10:00,087 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:10:00,088 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\main\resources
+2022-07-04 23:10:00,090 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-04 23:10:00,091 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\cinemar_CM3_JAVA\Cinemar\src\test\resources

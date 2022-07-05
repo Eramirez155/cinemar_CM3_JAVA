@@ -30,7 +30,7 @@ public class JsonTipoPelicula {
 		 Connection conn = null;
 		 Statement stmt = null;
 		 JSONObject jo = new JSONObject();
-		 ArrayList<TipoPelicula> mis_tipo = new ArrayList();
+		 ArrayList<TipoPelicula> mis_tipospelicula = new ArrayList();
 		 
 		 try{
 		 //PASO 2: Registrar JDBC driver
@@ -56,8 +56,8 @@ public class JsonTipoPelicula {
 			 boolean subtitulada = rs.getBoolean("subtitulada");
 			 System.out.println("id_Tipo_Pelicula: "+ id_Tipo_Pelicula + " idioma: " + idioma + "formato: " + formato + "subtitulada: " + subtitulada);
 			 
-			 TipoPelicula tipo = new TipoPelicula (id_Tipo_Pelicula, idioma, formato, subtitulada);
-			 mis_tipo.add(tipo);	 
+			 TipoPelicula tipopelicula = new TipoPelicula(id_Tipo_Pelicula,idioma,formato,subtitulada);
+			 mis_tipospelicula.add(tipopelicula);	 
 			 
 		 }
 		 //PASO6: Entorno de Limpieza
@@ -84,10 +84,10 @@ public class JsonTipoPelicula {
 		 se.printStackTrace();
 		 	} //cierra finally try
 		 } //cierra try
-		  String log4jConfPath = mi_credi.PATH; //cambiar el path
+		 String log4jConfPath = mi_credi.PATH; //cambiar el path
 		   PropertyConfigurator.configure(log4jConfPath);
-		   String json = new Gson().toJson(mis_tipo);
-	      get("/tipo", (req,res) -> json);
+		  String json = new Gson().toJson(mis_tipospelicula);
+	      get("/tipopelicula", (req,res) -> json);
 		 System.out.println("Goodbye!");
 		 
 	} // cierra metodo principal (main)
