@@ -2,7 +2,7 @@ package constructoresClaseCinemar;
 
 public class Clasificacion {
 
-	 private int id_clasificacion;
+	    private int id_clasificacion;
 	    private String identificador;
 	    private String descripcion;
 
