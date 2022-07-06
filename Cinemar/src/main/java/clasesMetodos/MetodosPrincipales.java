@@ -17,7 +17,9 @@ public class MetodosPrincipales {
 //			Descuento.elimina_descuento(8);
 //			Butaca.inserta_butaca("'M'", 15, false, 6);
 //			Butaca.actualizar_butaca(5, "'M'", 15, false, 6 );
-			Butaca.elimina_butaca(7);
+//			Butaca.elimina_butaca(7);
+//			Clasificacion.inserta_clasificacion("'21'", "'apto para mayores de 21'");
+			Clasificacion.actualizar_clasificacion(2, "'ATP'","'Apta para todo Publico'");
 		}
 
 	}
