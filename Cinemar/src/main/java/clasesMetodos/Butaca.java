@@ -74,7 +74,7 @@ public class Butaca {
 				+ ", id_sala=" + id_sala + "]";
 	}
 
-	public static void inserta_butaca(String fila, int numero, boolean reservada){
+	public static void inserta_butaca(String fila, int numero, boolean reservada, int id_sala){
 		 //  Registrar JDBC Driver
 		// JDBC nombre del driver y URL de la BDD
 			Credenciales mi_credi = new Credenciales();
@@ -98,7 +98,7 @@ public class Butaca {
 			 //PASO 4: Ejecutar una consulta SQL
 			 System.out.println("Creating statement...");
 			 stmt = conn.createStatement();
-			 String sql =  MessageFormat.format("INSERT INTO Butaca (fila, numero, reservada) VALUES ({0}, {1}, {2});", fila, numero, reservada);
+			 String sql =  MessageFormat.format("INSERT INTO Butaca (fila, numero, reservada, id_sala) VALUES ({0}, {1}, {2}, {3});", fila, numero, reservada, id_sala);
 			 System.out.println(sql);
 			 stmt.executeUpdate(sql);
 			 
@@ -130,7 +130,7 @@ public class Butaca {
 			 System.out.println("Goodbye!");
 		
 	}
-	public static void actualizar_butaca (int id_butaca,String fila, int numero, boolean reservada) {
+	public static void actualizar_butaca (int id_butaca,String fila, int numero, boolean reservada, int id_sala) {
 	//  Registrar JDBC Driver
 				// JDBC nombre del driver y URL de la BDD
 					Credenciales mi_credi = new Credenciales();
@@ -156,7 +156,7 @@ public class Butaca {
 					 stmt = conn.createStatement();
 					 String sql;
 //					 String porcentaje_STR = String.valueOf(porcentaje).replace(",", ".");
-					 sql = MessageFormat.format("UPDATE butaca SET fila = {0}, numero = {1}, reservada = {2}  WHERE id_butaca = {3}",fila,numero,reservada,id_butaca );
+					 sql = MessageFormat.format("UPDATE butaca SET fila = {0}, numero = {1}, reservada = {2} , id_sala = {3} WHERE id_butacas = {4}",fila,numero,reservada, id_sala,id_butaca );
 					 System.out.println(sql);
 					 stmt.executeUpdate(sql);
 					 
@@ -213,7 +213,7 @@ public class Butaca {
 			 System.out.println("Creating statement...");
 			 stmt = conn.createStatement();
 			 String sql;
-			 sql = MessageFormat.format("DELETE FROM butaca where id_butaca = {0}", id_butaca);
+			 sql = MessageFormat.format("DELETE FROM butaca where id_butacas = {0}", id_butaca);
 			 stmt.executeUpdate(sql);
 			 
 			 System.out.println("Valores ELIMINADOS con exito :) !");

@@ -15,7 +15,9 @@ public class MetodosPrincipales {
 //			mi_dec.actualizar_descuento(2, "'Lunes'", 80,100);
 //			Descuento.inserta_descuento("'miercoles'", 70, 800);
 //			Descuento.elimina_descuento(8);
-			Butaca.inserta_butaca("'M'", 15, false);
+//			Butaca.inserta_butaca("'M'", 15, false, 6);
+//			Butaca.actualizar_butaca(5, "'M'", 15, false, 6 );
+			Butaca.elimina_butaca(7);
 		}
 
 	}
