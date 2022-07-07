@@ -1,12 +1,19 @@
 package clasesMetodos;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.MessageFormat;
 import java.util.Date;
+
+import credencialesGlobales.Credenciales;
 
 public class CrearCuenta {
 	private int id_crearCuenta;
 	private String nombre;
 	private String apellido;
-	private int dni;
+	private String dni;
 	private Date fechaNacimiento;
 	private String nombreUsuarioFicticio;
 	private String contrasenia;
@@ -20,7 +27,7 @@ public class CrearCuenta {
 		
 	}
 	
-	public CrearCuenta(int id_crearCuenta, String nombre, String apellido, int dni, Date fechaNacimiento,
+	public CrearCuenta(int id_crearCuenta, String nombre, String apellido, String dni, Date fechaNacimiento,
 			String nombreUsuarioFicticio, String contrasenia, String confirmarContrasenia, String email, String genero,
 			String complejoHabitual, InicioSesion id_usuario) {
 		super();
@@ -62,11 +69,11 @@ public class CrearCuenta {
 		this.apellido = apellido;
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
@@ -142,7 +149,176 @@ public class CrearCuenta {
 				+ confirmarContrasenia + ", email=" + email + ", genero=" + genero + ", complejoHabitual="
 				+ complejoHabitual + ", id_usuario=" + id_usuario + "]";
 	}
+	public static void inserta_crearCuenta(String nombre, String apellido, String dni, String fechaNacimiento,String nombreUsuarioFicticio,String contrasenia,String confirmarContrasenia,String email,String genero,String complejoHabitual,int id_usuario){
+		 //  Registrar JDBC Driver
+		// JDBC nombre del driver y URL de la BDD
+			Credenciales mi_credi = new Credenciales();
+			String JDBC_DRIVER = mi_credi.JDBC_DRIVER; 
+			String DB_URL = mi_credi.DB_URL;
+		 // Credenciales de la BDD
+			String USER = mi_credi.USER;
+			String PASS = mi_credi.PASS;
+			
+			 Connection conn = null;
+			 Statement stmt = null;
+			 
+			 try{
+			 //PASO 2: Registrar JDBC driver
+			 Class.forName(JDBC_DRIVER);
+			 
+			 //PASO3: Abrir una Conexion
+			 System.out.println("Connecting to database...");
+			 conn = DriverManager.getConnection(DB_URL,USER,PASS);
+			 
+			 //PASO 4: Ejecutar una consulta SQL
+			 System.out.println("Creating statement...");
+			 stmt = conn.createStatement();
+			 String sql =  MessageFormat.format("INSERT INTO CrearCuenta (nombre,apellido,dni,fechaNacimiento,nombreUsuarioFicticio,contrasenia,confirmarContrasenia,email,genero,complejoHabitual,id_usuario) VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10});", nombre,apellido,dni,fechaNacimiento,nombreUsuarioFicticio,contrasenia,confirmarContrasenia,email,genero,complejoHabitual,id_usuario);
+			 System.out.println(sql);
+			 stmt.executeUpdate(sql);
+			 
+			 System.out.println("Valores INSERTADOS con exito :) !");
+			 
+			 //PASO6: Entorno de Limpieza
+			 stmt.close();
+			 conn.close();
+			 }catch(SQLException se){
+				 // Resolver errores para JDBC
+				 se.printStackTrace();
+			 }catch(Exception e){
+				 // Resolver errores para Class.forName
+				 e.printStackTrace();
+			 }finally{
+			 // Bloque finalmente utilizado para cerrar recursos
+			 try{
+				 if(stmt!=null)
+					 stmt.close();
+			 }catch(SQLException se2){
+			 }// Nada que podamos hacer
+			 try{
+				 if(conn!=null)
+					 conn.close();
+			 }catch(SQLException se){
+			 se.printStackTrace();
+			 	} //cierra finally try
+			 } //cierra try
+			 System.out.println("Goodbye!");
+		
+	}
+	public static void actualizar_crearCuenta (int id_crearCuenta,String nombre, String apellido, String dni, String fechaNacimiento,String nombreUsuarioFicticio,String contrasenia,String confirmarContrasenia,String email,String genero,String complejoHabitual,int id_usuario) {
+	//  Registrar JDBC Driver
+				// JDBC nombre del driver y URL de la BDD
+					Credenciales mi_credi = new Credenciales();
+					String JDBC_DRIVER = mi_credi.JDBC_DRIVER; 
+					String DB_URL = mi_credi.DB_URL;
+				 // Credenciales de la BDD
+					String USER = mi_credi.USER;
+					String PASS = mi_credi.PASS;
+					
+					Connection conn = null;
+					 Statement stmt = null;
+					 
+					 try{
+					 //PASO 2: Registrar JDBC driver
+					 Class.forName(JDBC_DRIVER);
+					 
+					 //PASO3: Abrir una Conexion
+					 System.out.println("Connecting to database...");
+					 conn = DriverManager.getConnection(DB_URL,USER,PASS);
+					 
+					 //PASO 4: Ejecutar una consulta SQL
+					 System.out.println("Creating statement...");
+					 stmt = conn.createStatement();
+					 String sql;
+//					 String porcentaje_STR = String.valueOf(porcentaje).replace(",", ".");
+					 sql = MessageFormat.format("UPDATE CrearCuenta SET nombre = {0}, apellido = {1}, dni = {2} , fechaNacimiento = {3}, nombreUsuarioFicticio = {4}, contrasenia = {5}, confirmarContrasenia = {6}, email = {7},genero = {8},complejoHabitual = {9},id_Usuario = {10} WHERE id_crearCuenta = {11}",nombre,apellido,dni,fechaNacimiento,nombreUsuarioFicticio,contrasenia,confirmarContrasenia,email,genero,complejoHabitual,id_usuario,id_crearCuenta);
+					 System.out.println(sql);
+					 stmt.executeUpdate(sql);
+					 
+					 System.out.println("Valores ACTUALIZADOS con exito :) !");
+					 
+					 //PASO6: Entorno de Limpieza
+					 stmt.close();
+					 conn.close();
+					 }catch(SQLException se){
+						 // Resolver errores para JDBC
+						 se.printStackTrace();
+					 }catch(Exception e){
+						 // Resolver errores para Class.forName
+						 e.printStackTrace();
+					 }finally{
+					 // Bloque finalmente utilizado para cerrar recursos
+					 try{
+						 if(stmt!=null)
+							 stmt.close();
+					 }catch(SQLException se2){
+					 }// Nada que podamos hacer
+					 try{
+						 if(conn!=null)
+							 conn.close();
+					 }catch(SQLException se){
+					 se.printStackTrace();
+					 	} //cierra finally try
+					 } //cierra try
+					 System.out.println("Goodbye!");
+	}
 
+	public static void elimina_crearCuenta(int id_crearCuenta){
+		 //  Registrar JDBC Driver
+		// JDBC nombre del driver y URL de la BDD
+			Credenciales mi_credi = new Credenciales();
+			String JDBC_DRIVER = mi_credi.JDBC_DRIVER; 
+			String DB_URL = mi_credi.DB_URL;
+		 // Credenciales de la BDD
+			String USER = mi_credi.USER;
+			String PASS = mi_credi.PASS;
+			
+			 Connection conn = null;
+			 Statement stmt = null;
+			 
+			 try{
+			 //PASO 2: Registrar JDBC driver
+			 Class.forName(JDBC_DRIVER);
+			 
+			 //PASO3: Abrir una Conexion
+			 System.out.println("Connecting to database...");
+			 conn = DriverManager.getConnection(DB_URL,USER,PASS);
+			 
+			 //PASO 4: Ejecutar una consulta SQL
+			 System.out.println("Creating statement...");
+			 stmt = conn.createStatement();
+			 String sql;
+			 sql = MessageFormat.format("DELETE FROM CrearCuenta where id_crearCuenta = {0}", id_crearCuenta);
+			 stmt.executeUpdate(sql);
+			 
+			 System.out.println("Valores ELIMINADOS con exito :) !");
+			 
+			 //PASO6: Entorno de Limpieza
+			 stmt.close();
+			 conn.close();
+			 }catch(SQLException se){
+				 // Resolver errores para JDBC
+				 se.printStackTrace();
+			 }catch(Exception e){
+				 // Resolver errores para Class.forName
+				 e.printStackTrace();
+			 }finally{
+			 // Bloque finalmente utilizado para cerrar recursos
+			 try{
+				 if(stmt!=null)
+					 stmt.close();
+			 }catch(SQLException se2){
+			 }// Nada que podamos hacer
+			 try{
+				 if(conn!=null)
+					 conn.close();
+			 }catch(SQLException se){
+			 se.printStackTrace();
+			 	} //cierra finally try
+			 } //cierra try
+			 System.out.println("Goodbye!");
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
