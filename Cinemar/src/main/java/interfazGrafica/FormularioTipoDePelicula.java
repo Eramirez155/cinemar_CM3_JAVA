@@ -1,0 +1,148 @@
+package interfazGrafica;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class FormularioTipoDePelicula extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FormularioTipoDePelicula frame = new FormularioTipoDePelicula();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FormularioTipoDePelicula() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 597, 357);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Tipo de pelicula");
+		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
+		lblNewLabel.setBounds(206, 0, 193, 65);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Idioma:");
+		lblNewLabel_1.setBounds(28, 68, 72, 29);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Formato:");
+		lblNewLabel_2.setBounds(28, 108, 72, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Subtitulada:");
+		lblNewLabel_3.setBounds(28, 145, 72, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		textField = new JTextField();
+		textField.setBounds(92, 76, 86, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(92, 108, 86, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(92, 142, 86, 20);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(296, 178, 86, 20);
+		contentPane.add(textField_3);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("Subtitulada:");
+		lblNewLabel_3_1.setBounds(206, 177, 84, 14);
+		contentPane.add(lblNewLabel_3_1);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Formato:");
+		lblNewLabel_2_1.setBounds(206, 140, 84, 14);
+		contentPane.add(lblNewLabel_2_1);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(296, 144, 86, 20);
+		contentPane.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(296, 112, 86, 20);
+		contentPane.add(textField_5);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Idioma:");
+		lblNewLabel_1_1.setBounds(206, 100, 84, 29);
+		contentPane.add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_4 = new JLabel("Id_tipo_pelicula:");
+		lblNewLabel_4.setBounds(206, 76, 84, 14);
+		contentPane.add(lblNewLabel_4);
+		
+		textField_6 = new JTextField();
+		textField_6.setBounds(296, 76, 86, 20);
+		contentPane.add(textField_6);
+		textField_6.setColumns(10);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(486, 76, 86, 20);
+		contentPane.add(textField_7);
+		
+		JLabel lblNewLabel_4_1 = new JLabel("Id_tipo_pelicula:");
+		lblNewLabel_4_1.setBounds(396, 76, 84, 14);
+		contentPane.add(lblNewLabel_4_1);
+		
+		JButton btnNewButton = new JButton("INSERTAR");
+		btnNewButton.setBounds(59, 189, 95, 29);
+		contentPane.add(btnNewButton);
+		
+		JButton btnActualizar = new JButton("ACTUALIZAR");
+		btnActualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnActualizar.setBounds(254, 209, 95, 29);
+		contentPane.add(btnActualizar);
+		
+		JButton btnNewButton_1 = new JButton("ELIMINAR");
+		btnNewButton_1.setBounds(452, 111, 89, 23);
+		contentPane.add(btnNewButton_1);
+	}
+}
