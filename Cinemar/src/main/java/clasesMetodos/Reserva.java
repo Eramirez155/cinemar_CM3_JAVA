@@ -1,5 +1,11 @@
 package clasesMetodos;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.MessageFormat;
 
+import credencialesGlobales.Credenciales;
 public class Reserva {
 private int id_reserva;
 private int cantidadDeEntradas;
@@ -87,7 +93,176 @@ public Reserva() {
 				+ id_sesion + ", id_butacas=" + id_butacas + ", id_descuento=" + id_descuento + ", id_tarjetaCredito="
 				+ id_tarjetaCredito + ", id_inicioSesion=" + id_inicioSesion + "]";
 	}
+	public static void inserta_reserva(int cantidadDeEntradas,int id_sesion,int id_butaca,int id_descuento, int id_tarjetaCredito, int id_inicioSesion){
+		//  Registrar JDBC Driver
+	   // JDBC nombre del driver y URL de la BDD
+		   Credenciales mi_credi = new Credenciales();
+		   String JDBC_DRIVER = mi_credi.JDBC_DRIVER; 
+		   String DB_URL = mi_credi.DB_URL;
+		// Credenciales de la BDD
+		   String USER = mi_credi.USER;
+		   String PASS = mi_credi.PASS;
+		   
+			Connection conn = null;
+			Statement stmt = null;
+			
+			try{
+			//PASO 2: Registrar JDBC driver
+			Class.forName(JDBC_DRIVER);
+			
+			//PASO3: Abrir una Conexion
+			System.out.println("Connecting to database...");
+			conn = DriverManager.getConnection(DB_URL,USER,PASS);
+			
+			//PASO 4: Ejecutar una consulta SQL
+			System.out.println("Creating statement...");
+			stmt = conn.createStatement();
+			String sql =  MessageFormat.format("INSERT INTO reserva (cantidadDeEntradas, id_sesion ,id_butaca,id_descuento,id_tarjetaCredito,id_inicioSesion) VALUES ({0}, {1},{2}, {3},{4}, {5});", cantidadDeEntradas, id_sesion ,id_butaca,id_descuento,id_tarjetaCredito,id_inicioSesion);
+			System.out.println(sql);
+			stmt.executeUpdate(sql);
+			
+			System.out.println("Valores INSERTADOS con exito :) !");
+			
+			//PASO6: Entorno de Limpieza
+			stmt.close();
+			conn.close();
+			}catch(SQLException se){
+				// Resolver errores para JDBC
+				se.printStackTrace();
+			}catch(Exception e){
+				// Resolver errores para Class.forName
+				e.printStackTrace();
+			}finally{
+			// Bloque finalmente utilizado para cerrar recursos
+			try{
+				if(stmt!=null)
+					stmt.close();
+			}catch(SQLException se2){
+			}// Nada que podamos hacer
+			try{
+				if(conn!=null)
+					conn.close();
+			}catch(SQLException se){
+			se.printStackTrace();
+				} //cierra finally try
+			} //cierra try
+			System.out.println("Goodbye!");
+	   
+   }
+   public static void actualizar_reserva (int id_reserva, int cantidadDeEntradas,int id_sesion,int id_butaca,int id_descuento,int id_tarjetaCredito,int id_inicioSesion) {
+   //  Registrar JDBC Driver
+			   // JDBC nombre del driver y URL de la BDD
+				   Credenciales mi_credi = new Credenciales();
+				   String JDBC_DRIVER = mi_credi.JDBC_DRIVER; 
+				   String DB_URL = mi_credi.DB_URL;
+				// Credenciales de la BDD
+				   String USER = mi_credi.USER;
+				   String PASS = mi_credi.PASS;
+				   
+				   Connection conn = null;
+					Statement stmt = null;
+					
+					try{
+					//PASO 2: Registrar JDBC driver
+					Class.forName(JDBC_DRIVER);
+					
+					//PASO3: Abrir una Conexion
+					System.out.println("Connecting to database...");
+					conn = DriverManager.getConnection(DB_URL,USER,PASS);
+					
+					//PASO 4: Ejecutar una consulta SQL
+					System.out.println("Creating statement...");
+					stmt = conn.createStatement();
+					String sql;
+//	   				 String porcentaje_STR = String.valueOf(porcentaje).replace(",", ".");
+					sql = MessageFormat.format("UPDATE reserva SET  cantidadDeEntradas= {0}, id_sesion = {1},id_butaca = {2},id_descuento = {3},id_tarjetaCredito = {4},id_inicioSesion = {5} WHERE id_reserva = {6}",cantidadDeEntradas, id_sesion,id_butaca,id_descuento,id_tarjetaCredito,id_inicioSesion, id_reserva);
+					System.out.println(sql);
+					stmt.executeUpdate(sql);
+					
+					System.out.println("Valores ACTUALIZADOS con exito :) !");
+					
+					//PASO6: Entorno de Limpieza
+					stmt.close();
+					conn.close();
+					}catch(SQLException se){
+						// Resolver errores para JDBC
+						se.printStackTrace();
+					}catch(Exception e){
+						// Resolver errores para Class.forName
+						e.printStackTrace();
+					}finally{
+					// Bloque finalmente utilizado para cerrar recursos
+					try{
+						if(stmt!=null)
+							stmt.close();
+					}catch(SQLException se2){
+					}// Nada que podamos hacer
+					try{
+						if(conn!=null)
+							conn.close();
+					}catch(SQLException se){
+					se.printStackTrace();
+						} //cierra finally try
+					} //cierra try
+					System.out.println("Goodbye!");
+   }
 
+   public static void elimina_reserva(int id_reserva){
+		//  Registrar JDBC Driver
+	   // JDBC nombre del driver y URL de la BDD
+		   Credenciales mi_credi = new Credenciales();
+		   String JDBC_DRIVER = mi_credi.JDBC_DRIVER; 
+		   String DB_URL = mi_credi.DB_URL;
+		// Credenciales de la BDD
+		   String USER = mi_credi.USER;
+		   String PASS = mi_credi.PASS;
+		   
+			Connection conn = null;
+			Statement stmt = null;
+			
+			try{
+			//PASO 2: Registrar JDBC driver
+			Class.forName(JDBC_DRIVER);
+			
+			//PASO3: Abrir una Conexion
+			System.out.println("Connecting to database...");
+			conn = DriverManager.getConnection(DB_URL,USER,PASS);
+			
+			//PASO 4: Ejecutar una consulta SQL
+			System.out.println("Creating statement...");
+			stmt = conn.createStatement();
+			String sql;
+			sql = MessageFormat.format("DELETE FROM reserva where id_reserva = {0}", id_reserva);
+			stmt.executeUpdate(sql);
+			
+			System.out.println("Valores ELIMINADOS con exito :) !");
+			
+			//PASO6: Entorno de Limpieza
+			stmt.close();
+			conn.close();
+			}catch(SQLException se){
+				// Resolver errores para JDBC
+				se.printStackTrace();
+			}catch(Exception e){
+				// Resolver errores para Class.forName
+				e.printStackTrace();
+			}finally{
+			// Bloque finalmente utilizado para cerrar recursos
+			try{
+				if(stmt!=null)
+					stmt.close();
+			}catch(SQLException se2){
+			}// Nada que podamos hacer
+			try{
+				if(conn!=null)
+					conn.close();
+			}catch(SQLException se){
+			se.printStackTrace();
+				} //cierra finally try
+			} //cierra try
+			System.out.println("Goodbye!");
+	   
+   }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
