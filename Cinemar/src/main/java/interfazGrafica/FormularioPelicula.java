@@ -61,41 +61,41 @@ public class FormularioPelicula extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("PELICULA");
+		JLabel lblNewLabel = new JLabel("Pelicula");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
 		lblNewLabel.setBounds(374, 11, 174, 41);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("TITULO PELICULA:");
+		JLabel lblNewLabel_1 = new JLabel("Titulo pelicula:");
 		lblNewLabel_1.setBounds(33, 89, 101, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("SINOPSIS:");
+		JLabel lblNewLabel_2 = new JLabel("Sipnosis:");
 		lblNewLabel_2.setBounds(33, 126, 101, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("GENERO:");
+		JLabel lblNewLabel_3 = new JLabel("Genero:");
 		lblNewLabel_3.setBounds(33, 169, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("DURACION:");
+		JLabel lblNewLabel_4 = new JLabel("Duracion:");
 		lblNewLabel_4.setBounds(33, 214, 101, 14);
 		contentPane.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("ACTORES:");
+		JLabel lblNewLabel_5 = new JLabel("Actores:");
 		lblNewLabel_5.setBounds(33, 257, 101, 14);
 		contentPane.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_6 = new JLabel("DIRECTOR:");
+		JLabel lblNewLabel_6 = new JLabel("Director:");
 		lblNewLabel_6.setBounds(33, 298, 101, 14);
 		contentPane.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_7 = new JLabel("ID TIPO PELICULA:");
+		JLabel lblNewLabel_7 = new JLabel("Id_tipo_pelicular:");
 		lblNewLabel_7.setBounds(33, 341, 101, 14);
 		contentPane.add(lblNewLabel_7);
 		
-		JLabel lblNewLabel_8 = new JLabel("ID CLASIFICACION:");
+		JLabel lblNewLabel_8 = new JLabel("Id_clasificacion:");
 		lblNewLabel_8.setBounds(33, 383, 101, 14);
 		contentPane.add(lblNewLabel_8);
 		
@@ -143,39 +143,39 @@ public class FormularioPelicula extends JFrame {
 		contentPane.add(textField_7);
 		textField_7.setColumns(10);
 		
-		JLabel lblNewLabel_9 = new JLabel("ID PELICULA:");
+		JLabel lblNewLabel_9 = new JLabel("Id_pelicula:");
 		lblNewLabel_9.setBounds(351, 89, 86, 14);
 		contentPane.add(lblNewLabel_9);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("TITULO PELICULA:");
+		JLabel lblNewLabel_1_1 = new JLabel("Titulo pelicula:");
 		lblNewLabel_1_1.setBounds(351, 126, 101, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("SINOPSIS:");
+		JLabel lblNewLabel_2_1 = new JLabel("Sipnosis:");
 		lblNewLabel_2_1.setBounds(351, 169, 101, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("GENERO:");
+		JLabel lblNewLabel_3_1 = new JLabel("Genero:");
 		lblNewLabel_3_1.setBounds(351, 214, 46, 14);
 		contentPane.add(lblNewLabel_3_1);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("DURACION:");
+		JLabel lblNewLabel_4_1 = new JLabel("Duracion:");
 		lblNewLabel_4_1.setBounds(351, 257, 101, 14);
 		contentPane.add(lblNewLabel_4_1);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("ACTORES:");
+		JLabel lblNewLabel_5_1 = new JLabel("Actores:");
 		lblNewLabel_5_1.setBounds(351, 298, 101, 14);
 		contentPane.add(lblNewLabel_5_1);
 		
-		JLabel lblNewLabel_6_1 = new JLabel("DIRECTOR:");
+		JLabel lblNewLabel_6_1 = new JLabel("Director:");
 		lblNewLabel_6_1.setBounds(351, 341, 101, 14);
 		contentPane.add(lblNewLabel_6_1);
 		
-		JLabel lblNewLabel_7_1 = new JLabel("ID TIPO PELICULA:");
+		JLabel lblNewLabel_7_1 = new JLabel("Id_tipo_pelicula:");
 		lblNewLabel_7_1.setBounds(351, 383, 101, 14);
 		contentPane.add(lblNewLabel_7_1);
 		
-		JLabel lblNewLabel_8_1 = new JLabel("ID CLASIFICACION:");
+		JLabel lblNewLabel_8_1 = new JLabel("Id_clasificacion:");
 		lblNewLabel_8_1.setBounds(351, 425, 101, 14);
 		contentPane.add(lblNewLabel_8_1);
 		
@@ -228,7 +228,7 @@ public class FormularioPelicula extends JFrame {
 		contentPane.add(textField_16);
 		textField_16.setColumns(10);
 		
-		JLabel lblNewLabel_9_1 = new JLabel("ID PELICULA:");
+		JLabel lblNewLabel_9_1 = new JLabel("Id_pelicula:");
 		lblNewLabel_9_1.setBounds(703, 89, 86, 14);
 		contentPane.add(lblNewLabel_9_1);
 		

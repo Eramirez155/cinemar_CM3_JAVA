@@ -53,25 +53,25 @@ public class FormularioButaca extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("BUTACA");
+		JLabel lblNewLabel = new JLabel("Butaca");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
 		lblNewLabel.setBounds(301, 37, 159, 25);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("FILA:");
+		JLabel lblNewLabel_1 = new JLabel("Fila:");
 		lblNewLabel_1.setBounds(39, 117, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("NUMERO:");
+		JLabel lblNewLabel_2 = new JLabel("Numero:");
 		lblNewLabel_2.setBounds(39, 152, 74, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("RESERVADA:");
+		JLabel lblNewLabel_3 = new JLabel("Reservada:");
 		lblNewLabel_3.setBounds(39, 193, 74, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("ID_SALA:");
+		JLabel lblNewLabel_4 = new JLabel("Id_sala:");
 		lblNewLabel_4.setBounds(39, 231, 46, 14);
 		contentPane.add(lblNewLabel_4);
 		
@@ -107,23 +107,23 @@ public class FormularioButaca extends JFrame {
 		btnNewButton_2.setBounds(618, 160, 114, 23);
 		contentPane.add(btnNewButton_2);
 		
-		JLabel lblNewLabel_5 = new JLabel("ID_BUTACA:");
+		JLabel lblNewLabel_5 = new JLabel("Id_butaca:");
 		lblNewLabel_5.setBounds(330, 117, 74, 14);
 		contentPane.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_6 = new JLabel("FILA:");
+		JLabel lblNewLabel_6 = new JLabel("Fila:");
 		lblNewLabel_6.setBounds(333, 152, 46, 14);
 		contentPane.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_7 = new JLabel("NUMERO:");
+		JLabel lblNewLabel_7 = new JLabel("Numero:");
 		lblNewLabel_7.setBounds(330, 193, 74, 14);
 		contentPane.add(lblNewLabel_7);
 		
-		JLabel lblNewLabel_8 = new JLabel("RESERVADA:");
+		JLabel lblNewLabel_8 = new JLabel("Reservada:");
 		lblNewLabel_8.setBounds(330, 231, 74, 14);
 		contentPane.add(lblNewLabel_8);
 		
-		JLabel lblNewLabel_9 = new JLabel("ID_SALA:");
+		JLabel lblNewLabel_9 = new JLabel("Id_sala:");
 		lblNewLabel_9.setBounds(330, 270, 46, 14);
 		contentPane.add(lblNewLabel_9);
 		
@@ -152,7 +152,7 @@ public class FormularioButaca extends JFrame {
 		contentPane.add(textField_8);
 		textField_8.setColumns(10);
 		
-		JLabel lblNewLabel_10 = new JLabel("ID_SALA:");
+		JLabel lblNewLabel_10 = new JLabel("Id_sala:");
 		lblNewLabel_10.setBounds(590, 117, 57, 14);
 		contentPane.add(lblNewLabel_10);
 		

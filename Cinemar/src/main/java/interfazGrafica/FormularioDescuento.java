@@ -51,13 +51,13 @@ public class FormularioDescuento extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("DESCUENTO");
+		JLabel lblNewLabel = new JLabel("Descuento");
 		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(271, 11, 244, 37);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("DIA:");
+		JLabel lblNewLabel_1 = new JLabel("Dia:");
 		lblNewLabel_1.setBounds(40, 76, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
@@ -66,11 +66,11 @@ public class FormularioDescuento extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("PORCENTAJE:");
+		JLabel lblNewLabel_2 = new JLabel("Porcentaje:");
 		lblNewLabel_2.setBounds(40, 116, 86, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("PRECIO FINAL");
+		JLabel lblNewLabel_3 = new JLabel("Precio final");
 		lblNewLabel_3.setBounds(40, 157, 86, 14);
 		contentPane.add(lblNewLabel_3);
 		
@@ -88,19 +88,19 @@ public class FormularioDescuento extends JFrame {
 		btnNewButton.setBounds(75, 214, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("DIA:");
+		JLabel lblNewLabel_1_1 = new JLabel("Dia:");
 		lblNewLabel_1_1.setBounds(281, 116, 46, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("PORCENTAJE:");
+		JLabel lblNewLabel_2_1 = new JLabel("Porcentaje:");
 		lblNewLabel_2_1.setBounds(281, 157, 86, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("PRECIO FINAL");
+		JLabel lblNewLabel_3_1 = new JLabel("Precio final");
 		lblNewLabel_3_1.setBounds(281, 195, 86, 14);
 		contentPane.add(lblNewLabel_3_1);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("ID_DESCUENTO:");
+		JLabel lblNewLabel_1_2 = new JLabel("Id_descuento:");
 		lblNewLabel_1_2.setBounds(281, 76, 86, 14);
 		contentPane.add(lblNewLabel_1_2);
 		
@@ -128,7 +128,7 @@ public class FormularioDescuento extends JFrame {
 		btnNewButton_1.setBounds(324, 247, 119, 23);
 		contentPane.add(btnNewButton_1);
 		
-		JLabel lblNewLabel_1_2_1 = new JLabel("ID_DESCUENTO:");
+		JLabel lblNewLabel_1_2_1 = new JLabel("Id_descuento:");
 		lblNewLabel_1_2_1.setBounds(513, 76, 86, 14);
 		contentPane.add(lblNewLabel_1_2_1);
 		

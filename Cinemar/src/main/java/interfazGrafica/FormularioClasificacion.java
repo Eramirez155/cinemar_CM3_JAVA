@@ -49,17 +49,17 @@ public class FormularioClasificacion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("CLASIFICACION");
+		JLabel lblNewLabel = new JLabel("Clasificacion");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
 		lblNewLabel.setBounds(313, 11, 233, 45);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("IDENTIFICADOR:");
+		JLabel lblNewLabel_1 = new JLabel("Identificador:");
 		lblNewLabel_1.setBounds(37, 101, 99, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("DESCRIPCION:");
+		JLabel lblNewLabel_2 = new JLabel("Descripcion:");
 		lblNewLabel_2.setBounds(37, 147, 86, 14);
 		contentPane.add(lblNewLabel_2);
 		
@@ -73,7 +73,7 @@ public class FormularioClasificacion extends JFrame {
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("ID_CLASIFICACION:");
+		JLabel lblNewLabel_3 = new JLabel("Id_clasificacion:");
 		lblNewLabel_3.setBounds(313, 101, 123, 14);
 		contentPane.add(lblNewLabel_3);
 		
@@ -96,11 +96,11 @@ public class FormularioClasificacion extends JFrame {
 		btnNewButton.setBounds(91, 227, 112, 23);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("IDENTIFICADOR:");
+		JLabel lblNewLabel_1_1 = new JLabel("Identificador:");
 		lblNewLabel_1_1.setBounds(313, 147, 99, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("DESCRIPCION:");
+		JLabel lblNewLabel_2_1 = new JLabel("Descripcion:");
 		lblNewLabel_2_1.setBounds(313, 193, 86, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
@@ -113,7 +113,7 @@ public class FormularioClasificacion extends JFrame {
 		btnActualizar.setBounds(358, 255, 112, 23);
 		contentPane.add(btnActualizar);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("ID_CLASIFICACION:");
+		JLabel lblNewLabel_3_1 = new JLabel("Id_clasifiacion:");
 		lblNewLabel_3_1.setBounds(602, 101, 123, 14);
 		contentPane.add(lblNewLabel_3_1);
 		
