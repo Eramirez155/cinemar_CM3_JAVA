@@ -11,6 +11,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class FormularioPelicula extends JFrame {
 
@@ -57,45 +58,63 @@ public class FormularioPelicula extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 973, 598);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 139));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Pelicula");
+		JLabel lblNewLabel = new JLabel("PELICULA");
+		lblNewLabel.setForeground(new Color(255, 255, 0));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 22));
 		lblNewLabel.setBounds(374, 11, 174, 41);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Titulo pelicula:");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_1.setBounds(33, 89, 101, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Sipnosis:");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_2.setBounds(33, 126, 101, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Genero:");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_3.setBounds(33, 169, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Duracion:");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_4.setBounds(33, 214, 101, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Actores:");
+		lblNewLabel_5.setForeground(new Color(255, 255, 255));
+		lblNewLabel_5.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_5.setBounds(33, 257, 101, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("Director:");
+		lblNewLabel_6.setForeground(new Color(255, 255, 255));
+		lblNewLabel_6.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_6.setBounds(33, 298, 101, 14);
 		contentPane.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("Id_tipo_pelicular:");
+		lblNewLabel_7.setForeground(new Color(255, 255, 255));
+		lblNewLabel_7.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_7.setBounds(33, 341, 101, 14);
 		contentPane.add(lblNewLabel_7);
 		
 		JLabel lblNewLabel_8 = new JLabel("Id_clasificacion:");
+		lblNewLabel_8.setForeground(new Color(255, 255, 255));
+		lblNewLabel_8.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_8.setBounds(33, 383, 101, 14);
 		contentPane.add(lblNewLabel_8);
 		
@@ -135,6 +154,8 @@ public class FormularioPelicula extends JFrame {
 		textField_6.setColumns(10);
 		
 		JButton btnNewButton = new JButton("INSERTAR");
+		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(76, 438, 124, 23);
 		contentPane.add(btnNewButton);
 		
@@ -144,42 +165,62 @@ public class FormularioPelicula extends JFrame {
 		textField_7.setColumns(10);
 		
 		JLabel lblNewLabel_9 = new JLabel("Id_pelicula:");
+		lblNewLabel_9.setForeground(new Color(255, 255, 255));
+		lblNewLabel_9.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_9.setBounds(351, 89, 86, 14);
 		contentPane.add(lblNewLabel_9);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Titulo pelicula:");
+		lblNewLabel_1_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_1_1.setBounds(351, 126, 101, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Sipnosis:");
+		lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_2_1.setBounds(351, 169, 101, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Genero:");
+		lblNewLabel_3_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_3_1.setBounds(351, 214, 46, 14);
 		contentPane.add(lblNewLabel_3_1);
 		
 		JLabel lblNewLabel_4_1 = new JLabel("Duracion:");
+		lblNewLabel_4_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_4_1.setBounds(351, 257, 101, 14);
 		contentPane.add(lblNewLabel_4_1);
 		
 		JLabel lblNewLabel_5_1 = new JLabel("Actores:");
+		lblNewLabel_5_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_5_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_5_1.setBounds(351, 298, 101, 14);
 		contentPane.add(lblNewLabel_5_1);
 		
 		JLabel lblNewLabel_6_1 = new JLabel("Director:");
+		lblNewLabel_6_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_6_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_6_1.setBounds(351, 341, 101, 14);
 		contentPane.add(lblNewLabel_6_1);
 		
 		JLabel lblNewLabel_7_1 = new JLabel("Id_tipo_pelicula:");
+		lblNewLabel_7_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_7_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_7_1.setBounds(351, 383, 101, 14);
 		contentPane.add(lblNewLabel_7_1);
 		
 		JLabel lblNewLabel_8_1 = new JLabel("Id_clasificacion:");
+		lblNewLabel_8_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_8_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_8_1.setBounds(351, 425, 101, 14);
 		contentPane.add(lblNewLabel_8_1);
 		
 		JButton btnNewButton_1 = new JButton("ACTUALIZAR");
+		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setBounds(424, 479, 124, 23);
 		contentPane.add(btnNewButton_1);
 		
@@ -229,6 +270,8 @@ public class FormularioPelicula extends JFrame {
 		textField_16.setColumns(10);
 		
 		JLabel lblNewLabel_9_1 = new JLabel("Id_pelicula:");
+		lblNewLabel_9_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_9_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_9_1.setBounds(703, 89, 86, 14);
 		contentPane.add(lblNewLabel_9_1);
 		
@@ -238,6 +281,8 @@ public class FormularioPelicula extends JFrame {
 		contentPane.add(textField_17);
 		
 		JButton btnNewButton_2 = new JButton("ELIMINAR");
+		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setBounds(757, 136, 89, 23);
 		contentPane.add(btnNewButton_2);
 	}

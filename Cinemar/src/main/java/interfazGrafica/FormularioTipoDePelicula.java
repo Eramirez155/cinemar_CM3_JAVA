@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class FormularioTipoDePelicula extends JFrame {
 
@@ -48,24 +49,32 @@ public class FormularioTipoDePelicula extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 597, 357);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 139));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Tipo de pelicula");
-		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
-		lblNewLabel.setBounds(206, 0, 193, 65);
+		JLabel lblNewLabel = new JLabel("TIPODEPELICULA");
+		lblNewLabel.setForeground(new Color(255, 255, 0));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 22));
+		lblNewLabel.setBounds(206, 0, 241, 65);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Idioma:");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_1.setBounds(28, 68, 72, 29);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Formato:");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_2.setBounds(28, 108, 72, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Subtitulada:");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_3.setBounds(28, 145, 72, 14);
 		contentPane.add(lblNewLabel_3);
 		
@@ -90,10 +99,14 @@ public class FormularioTipoDePelicula extends JFrame {
 		contentPane.add(textField_3);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Subtitulada:");
+		lblNewLabel_3_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_3_1.setBounds(206, 177, 84, 14);
 		contentPane.add(lblNewLabel_3_1);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Formato:");
+		lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_2_1.setBounds(206, 140, 84, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
@@ -108,10 +121,14 @@ public class FormularioTipoDePelicula extends JFrame {
 		contentPane.add(textField_5);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Idioma:");
+		lblNewLabel_1_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_1_1.setBounds(206, 100, 84, 29);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_4 = new JLabel("Id_tipo_pelicula:");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_4.setBounds(206, 76, 84, 14);
 		contentPane.add(lblNewLabel_4);
 		
@@ -126,14 +143,20 @@ public class FormularioTipoDePelicula extends JFrame {
 		contentPane.add(textField_7);
 		
 		JLabel lblNewLabel_4_1 = new JLabel("Id_tipo_pelicula:");
+		lblNewLabel_4_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_4_1.setBounds(396, 76, 84, 14);
 		contentPane.add(lblNewLabel_4_1);
 		
-		JButton btnNewButton = new JButton("INSERTAR");
+		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton.setForeground(new Color(65, 105, 225));
+		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setBounds(59, 189, 95, 29);
 		contentPane.add(btnNewButton);
 		
-		JButton btnActualizar = new JButton("ACTUALIZAR");
+		JButton btnActualizar = new JButton("Actualizar");
+		btnActualizar.setForeground(new Color(65, 105, 225));
+		btnActualizar.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -141,7 +164,9 @@ public class FormularioTipoDePelicula extends JFrame {
 		btnActualizar.setBounds(254, 209, 95, 29);
 		contentPane.add(btnActualizar);
 		
-		JButton btnNewButton_1 = new JButton("ELIMINAR");
+		JButton btnNewButton_1 = new JButton("Eliminar");
+		btnNewButton_1.setForeground(new Color(65, 105, 225));
+		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setBounds(452, 111, 89, 23);
 		contentPane.add(btnNewButton_1);
 	}

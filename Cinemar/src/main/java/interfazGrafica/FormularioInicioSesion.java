@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class FormularioInicioSesion extends JFrame {
 
@@ -54,40 +55,56 @@ public class FormularioInicioSesion extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 724, 343);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 139));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("InicioSesion");
-		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
-		lblNewLabel.setBounds(263, 11, 157, 27);
+		JLabel lblNewLabel = new JLabel("INICIOSESION");
+		lblNewLabel.setForeground(new Color(255, 255, 0));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 22));
+		lblNewLabel.setBounds(263, 11, 173, 27);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("nombreUsuarioFicticio:");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_1.setBounds(10, 59, 145, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("contrasenia:");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_2.setBounds(10, 87, 145, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("confirmarContrasenia:");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_3.setBounds(10, 112, 145, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("email:");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_4.setBounds(10, 140, 145, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("id_crearCuenta:");
+		lblNewLabel_5.setForeground(new Color(255, 255, 255));
+		lblNewLabel_5.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_5.setBounds(10, 168, 145, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("id_usuario:");
+		lblNewLabel_6.setForeground(new Color(255, 255, 255));
+		lblNewLabel_6.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_6.setBounds(10, 196, 145, 14);
 		contentPane.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("id_tarjetaCredito:");
+		lblNewLabel_7.setForeground(new Color(255, 255, 255));
+		lblNewLabel_7.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_7.setBounds(10, 224, 145, 14);
 		contentPane.add(lblNewLabel_7);
 		
@@ -127,46 +144,68 @@ public class FormularioInicioSesion extends JFrame {
 		textField_6.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(64, 249, 114, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Actualizar");
+		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setBounds(322, 275, 114, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setBounds(564, 83, 114, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_8 = new JLabel("id_inicioSesion:");
+		lblNewLabel_8.setForeground(new Color(255, 255, 255));
+		lblNewLabel_8.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_8.setBounds(263, 59, 173, 14);
 		contentPane.add(lblNewLabel_8);
 		
 		JLabel lblNewLabel_9 = new JLabel("nombreUsuarioFicticio:");
+		lblNewLabel_9.setForeground(new Color(255, 255, 255));
+		lblNewLabel_9.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_9.setBounds(263, 87, 173, 14);
 		contentPane.add(lblNewLabel_9);
 		
 		JLabel lblNewLabel_10 = new JLabel("contrasenia:");
+		lblNewLabel_10.setForeground(new Color(255, 255, 255));
+		lblNewLabel_10.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_10.setBounds(263, 112, 173, 14);
 		contentPane.add(lblNewLabel_10);
 		
 		JLabel lblNewLabel_11 = new JLabel("confirmarContrasenia:");
+		lblNewLabel_11.setForeground(new Color(255, 255, 255));
+		lblNewLabel_11.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_11.setBounds(263, 140, 173, 14);
 		contentPane.add(lblNewLabel_11);
 		
 		JLabel lblNewLabel_12 = new JLabel("email:");
+		lblNewLabel_12.setForeground(new Color(255, 255, 255));
+		lblNewLabel_12.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_12.setBounds(263, 168, 173, 14);
 		contentPane.add(lblNewLabel_12);
 		
 		JLabel lblNewLabel_13 = new JLabel("id_crearCuenta:");
+		lblNewLabel_13.setForeground(new Color(255, 255, 255));
+		lblNewLabel_13.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_13.setBounds(263, 196, 173, 14);
 		contentPane.add(lblNewLabel_13);
 		
 		JLabel lblNewLabel_14 = new JLabel("id_usuario:");
+		lblNewLabel_14.setForeground(new Color(255, 255, 255));
+		lblNewLabel_14.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_14.setBounds(263, 224, 173, 14);
 		contentPane.add(lblNewLabel_14);
 		
 		JLabel lblNewLabel_15 = new JLabel("id_tarjetaCredito:");
+		lblNewLabel_15.setForeground(new Color(255, 255, 255));
+		lblNewLabel_15.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_15.setBounds(263, 253, 173, 14);
 		contentPane.add(lblNewLabel_15);
 		
@@ -211,6 +250,8 @@ public class FormularioInicioSesion extends JFrame {
 		textField_14.setColumns(10);
 		
 		JLabel lblNewLabel_16 = new JLabel("id_inicioSesion:");
+		lblNewLabel_16.setForeground(new Color(255, 255, 255));
+		lblNewLabel_16.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_16.setBounds(512, 59, 96, 14);
 		contentPane.add(lblNewLabel_16);
 		

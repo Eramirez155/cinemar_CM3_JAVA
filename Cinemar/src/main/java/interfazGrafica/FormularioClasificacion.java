@@ -11,6 +11,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class FormularioClasificacion extends JFrame {
 
@@ -45,21 +46,27 @@ public class FormularioClasificacion extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 872, 398);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Clasificacion");
+		JLabel lblNewLabel = new JLabel("CLASIFICACION");
+		lblNewLabel.setForeground(new Color(255, 255, 0));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Century Schoolbook", Font.BOLD, 22));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 22));
 		lblNewLabel.setBounds(313, 11, 233, 45);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Identificador:");
+		lblNewLabel_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(37, 101, 99, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Descripcion:");
+		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.PLAIN, 12));
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(37, 147, 86, 14);
 		contentPane.add(lblNewLabel_2);
 		
@@ -74,6 +81,8 @@ public class FormularioClasificacion extends JFrame {
 		textField_1.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Id_clasificacion:");
+		lblNewLabel_3.setFont(new Font("Showcard Gothic", Font.PLAIN, 12));
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setBounds(313, 101, 123, 14);
 		contentPane.add(lblNewLabel_3);
 		
@@ -93,14 +102,20 @@ public class FormularioClasificacion extends JFrame {
 		textField_4.setColumns(10);
 		
 		JButton btnNewButton = new JButton("INSERTAR");
+		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(91, 227, 112, 23);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Identificador:");
+		lblNewLabel_1_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 12));
+		lblNewLabel_1_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1_1.setBounds(313, 147, 99, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Descripcion:");
+		lblNewLabel_2_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 12));
+		lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2_1.setBounds(313, 193, 86, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
@@ -110,14 +125,20 @@ public class FormularioClasificacion extends JFrame {
 		contentPane.add(textField_5);
 		
 		JButton btnActualizar = new JButton("ACTUALIZAR");
-		btnActualizar.setBounds(358, 255, 112, 23);
+		btnActualizar.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnActualizar.setForeground(new Color(65, 105, 225));
+		btnActualizar.setBounds(358, 255, 141, 23);
 		contentPane.add(btnActualizar);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Id_clasifiacion:");
+		lblNewLabel_3_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 12));
+		lblNewLabel_3_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3_1.setBounds(602, 101, 123, 14);
 		contentPane.add(lblNewLabel_3_1);
 		
 		JButton btnEliminar = new JButton("ELIMINAR");
+		btnEliminar.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnEliminar.setForeground(new Color(65, 105, 225));
 		btnEliminar.setBounds(651, 157, 112, 23);
 		contentPane.add(btnEliminar);
 	}
