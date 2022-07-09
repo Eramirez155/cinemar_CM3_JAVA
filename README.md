@@ -51,11 +51,21 @@ Nos llega desde administración del cine a nuestro equipo de desarrolladores que
 * La reserva implica el pago de la entrada.
 * Las reservas solo se pueden modificar simpre y cuando se hagan antes de la función.
 
+# Integrantes del equipo
+@naomipoclava2021
+
+@MartinPasqua
+
+@Edgardo768
+
+@Eramirez155
+
+@MagdalenaGalvan13
+
 # Diagrama UML 
 ![Clase UML ](https://user-images.githubusercontent.com/107365832/174696711-9089538f-2ac1-45ee-864d-2e1363691e2a.png)
 # Ingenieria reversa
-![IngenieriaReversa2](https://user-images.githubusercontent.com/107365188/176341389-222d5133-036b-4e22-98f3-c3104d55963c.png)
-
+![IngenieriaReversa3](https://user-images.githubusercontent.com/107365832/178125293-ca5f4b56-1eb7-4f31-8b99-5c9649a856f6.png)
 # Diagrama Entidad Relacion
 ![Diagrama drawio (1)](https://user-images.githubusercontent.com/107365832/175990785-75b3c6bb-9d63-42fe-9e46-8d01ea35cb38.png)
 # Entregables

@@ -6,13 +6,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.Reserva;
+import clasesMetodos.TipoPelicula;
+
 import javax.swing.JLabel;
+import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-public class FormularioReserva extends JFrame {
+public class FormularioReserva extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -29,7 +35,9 @@ public class FormularioReserva extends JFrame {
 	private JTextField textField_11;
 	private JTextField textField_12;
 	private JTextField textField_13;
-
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 	/**
 	 * Launch the application.
 	 */
@@ -212,22 +220,25 @@ public class FormularioReserva extends JFrame {
 		contentPane.add(textField_13);
 		textField_13.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton = new JButton("Insertar");
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setBounds(68, 214, 96, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Actualizar");
+		btnNewButton_1 = new JButton("Actualizar");
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setBounds(364, 245, 115, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2 = new JButton("Eliminar");
 		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_2.setBounds(596, 69, 136, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_14 = new JLabel("RESERVA");
@@ -236,4 +247,37 @@ public class FormularioReserva extends JFrame {
 		lblNewLabel_14.setBounds(209, 11, 149, 14);
 		contentPane.add(lblNewLabel_14);
 	}
-}
+	
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==btnNewButton)
+		{int cantidadDeEntrada = Integer.parseInt(textField.getText()); 
+		int id_sesion = Integer.parseInt(textField_1.getText()); 
+		int id_butaca = Integer.parseInt(textField_2.getText()); 
+		int id_descuento = Integer.parseInt(textField_3.getText()); 
+		int id_tarjetaCredito = Integer.parseInt(textField_4.getText());
+		int id_inicioSesion = Integer.parseInt(textField_5.getText()); 
+		Reserva.inserta_reserva(cantidadDeEntrada,id_sesion, id_butaca, id_descuento, id_tarjetaCredito, id_inicioSesion);}
+		//System.out.println("cantidadDeEntrada es " + cantidadDeEntrada + " El id_sesion es " + id_sesion + " El id_butaca es " + id_butaca + " El id_descuento es " + id_descuento + " id_tarjetaCredito " + id_tarjetaCredito + " id_inicioSesion " + id_inicioSesion);}
+		
+		if (e.getSource()==btnNewButton_1)
+		{int id_reserva = Integer.parseInt(textField_6.getText());
+		int cantidadDeEntrada = Integer.parseInt(textField_7.getText()); 
+		int id_sesion = Integer.parseInt(textField_8.getText()); 
+		int id_butaca = Integer.parseInt(textField_9.getText()); 
+		int id_descuento = Integer.parseInt(textField_10.getText()); 
+		int id_tarjetaCredito = Integer.parseInt(textField_11.getText());
+		int id_inicioSesion = Integer.parseInt(textField_12.getText());
+
+		
+		Reserva.actualizar_reserva(id_reserva,cantidadDeEntrada, id_sesion, id_butaca, id_descuento,id_tarjetaCredito,id_inicioSesion );
+		//System.out.println(" Id reserva es " + id_reserva + "cantidadDeEntrada es " + cantidadDeEntrada + " El id_sesion es " + id_sesion + " El id_butaca es " + id_butaca + " El id_descuento es " + id_descuento + " id_tarjetaCredito " + id_tarjetaCredito + " id_inicioSesion " + id_inicioSesion);
+		}
+		
+		if (e.getSource()==btnNewButton_2)
+		{
+		 int id_reserva = Integer.parseInt(textField_13.getText()); 
+		 Reserva.elimina_reserva(id_reserva);
+			//System.out.println("El id es " + id_reserva);
+		}
+	
+	}}

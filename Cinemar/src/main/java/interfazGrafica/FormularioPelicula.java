@@ -6,14 +6,21 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.Descuento;
+import clasesMetodos.Pelicula;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class FormularioPelicula extends JFrame {
+public class FormularioPelicula extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -34,6 +41,9 @@ public class FormularioPelicula extends JFrame {
 	private JTextField textField_15;
 	private JTextField textField_16;
 	private JTextField textField_17;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -153,10 +163,11 @@ public class FormularioPelicula extends JFrame {
 		contentPane.add(textField_6);
 		textField_6.setColumns(10);
 		
-		JButton btnNewButton = new JButton("INSERTAR");
+		btnNewButton = new JButton("INSERTAR");
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(76, 438, 124, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
 		textField_7 = new JTextField();
@@ -218,10 +229,11 @@ public class FormularioPelicula extends JFrame {
 		lblNewLabel_8_1.setBounds(351, 425, 101, 14);
 		contentPane.add(lblNewLabel_8_1);
 		
-		JButton btnNewButton_1 = new JButton("ACTUALIZAR");
+		btnNewButton_1 = new JButton("ACTUALIZAR");
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setBounds(424, 479, 124, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
 		textField_8 = new JTextField();
@@ -280,10 +292,55 @@ public class FormularioPelicula extends JFrame {
 		textField_17.setBounds(811, 86, 86, 20);
 		contentPane.add(textField_17);
 		
-		JButton btnNewButton_2 = new JButton("ELIMINAR");
+		btnNewButton_2 = new JButton("ELIMINAR");
 		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setBounds(757, 136, 89, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
 	}
-}
+
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==btnNewButton) {
+			Insertarpelicula();
+		} else if(e.getSource()==btnNewButton_1) {
+			Actualizarpelicula();
+		} else if (e.getSource()==btnNewButton_2) {
+			Eliminarpelicula();
+		}
+	}
+
+	private void Eliminarpelicula() {
+		int id_pelicula=Integer.parseInt(textField_17.getText());
+		Pelicula.elimina_pelicula(id_pelicula);
+	}
+
+	private void Actualizarpelicula() {
+		int id_pelicula=Integer.parseInt(textField_8.getText());
+		String titulo_pelicula=  textField_9.getText();
+		String sinopsis=  textField_10.getText();
+		String genero=  textField_11.getText();
+		String duracion=  textField_12.getText();
+		String actores=  textField_13.getText();
+		String director=  textField_14.getText();
+		int id_tipo_pelicula=Integer.parseInt(textField_15.getText());
+		int id_clasificacion=Integer.parseInt(textField_16.getText());
+		Pelicula.actualizar_pelicula(id_pelicula,"'"+titulo_pelicula+"'","'"+sinopsis+"'","'"+genero+"'","'"+duracion+"'","'"+actores+"'","'"+director+"'",id_tipo_pelicula, id_clasificacion);
+		
+		
+	}
+
+	private void Insertarpelicula() {
+		String titulo_pelicula=  textField.getText();
+		String sinopsis=  textField_1.getText();
+		String genero=  textField_2.getText();
+		String duracion=  textField_3.getText();
+		String actores=  textField_4.getText();
+		String director=  textField_5.getText();
+		int id_tipo_pelicula=Integer.parseInt(textField_6.getText());
+		int id_clasificacion=Integer.parseInt(textField_7.getText());
+		Pelicula.inserta_pelicula("'"+titulo_pelicula+"'","'"+sinopsis+"'","'"+genero+"'","'"+duracion+"'","'"+actores+"'","'"+director+"'",id_tipo_pelicula, id_clasificacion);
+		
+	}
+		
+	}

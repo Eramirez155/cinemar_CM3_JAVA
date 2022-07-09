@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.CrearCuenta;
+import clasesMetodos.TipoPelicula;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -14,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-public class FormularioTipoDePelicula extends JFrame {
+public class FormularioTipoDePelicula extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -25,6 +29,9 @@ public class FormularioTipoDePelicula extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private JButton btnNewButton;
+	private JButton btnActualizar;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -148,26 +155,56 @@ public class FormularioTipoDePelicula extends JFrame {
 		lblNewLabel_4_1.setBounds(396, 76, 84, 14);
 		contentPane.add(lblNewLabel_4_1);
 		
-		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton = new JButton("Insertar");
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setBounds(59, 189, 95, 29);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
-		JButton btnActualizar = new JButton("Actualizar");
+		btnActualizar = new JButton("Actualizar");
 		btnActualizar.setForeground(new Color(65, 105, 225));
 		btnActualizar.setFont(new Font("Cooper Black", Font.PLAIN, 11));
-		btnActualizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnActualizar.addActionListener(this);
 		btnActualizar.setBounds(254, 209, 95, 29);
 		contentPane.add(btnActualizar);
 		
-		JButton btnNewButton_1 = new JButton("Eliminar");
+		btnNewButton_1 = new JButton("Eliminar");
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setBounds(452, 111, 89, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==btnNewButton) {
+			insertarTipoDePelicula();
+			}else if(e.getSource()==btnActualizar){
+				actualizarTipoDePelicula();
+			}else if(e.getSource()==btnNewButton_1) {
+				eliminarTipoDePelicula();
+			}
+	}
+
+	private void eliminarTipoDePelicula() {
+		int Id_tipo_pelicula= Integer.parseInt(textField_7.getText());
+		TipoPelicula.elimina_tipoPelicula(Id_tipo_pelicula);
+	}
+
+	private void actualizarTipoDePelicula() {
+		int Id_tipo_pelicula= Integer.parseInt(textField_6.getText());
+		String Idioma=textField_5.getText();
+		String Formato=textField_4.getText();
+		boolean Subtitulada=Boolean.parseBoolean(textField_3.getText());
+		TipoPelicula.actualizar_tipoPelicula(Id_tipo_pelicula,"'" + Idioma+ "'","'" + Formato+ "'",Subtitulada);
+	}
+
+	private void insertarTipoDePelicula() {
+		String Idioma=textField.getText();
+		String Formato=textField_1.getText();
+		boolean Subtitulada=Boolean.parseBoolean(textField_2.getText());
+		TipoPelicula.inserta_tipoPelicula("'" + Idioma+ "'","'" + Formato+ "'",Subtitulada);
+//		TipoPelicula.inserta_tipoPelicula("'castellano'", "'2D'", true);
 	}
 }
