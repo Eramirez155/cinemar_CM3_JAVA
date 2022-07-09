@@ -6,14 +6,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.Clasificacion;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class FormularioClasificacion extends JFrame {
+public class FormularioClasificacion extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -22,6 +28,9 @@ public class FormularioClasificacion extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnEliminar;
 
 	/**
 	 * Launch the application.
@@ -101,10 +110,11 @@ public class FormularioClasificacion extends JFrame {
 		contentPane.add(textField_4);
 		textField_4.setColumns(10);
 		
-		JButton btnNewButton = new JButton("INSERTAR");
+		btnNewButton = new JButton("INSERTAR");
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(91, 227, 112, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Identificador:");
@@ -124,11 +134,12 @@ public class FormularioClasificacion extends JFrame {
 		textField_5.setBounds(446, 190, 86, 20);
 		contentPane.add(textField_5);
 		
-		JButton btnActualizar = new JButton("ACTUALIZAR");
-		btnActualizar.setFont(new Font("Cooper Black", Font.PLAIN, 11));
-		btnActualizar.setForeground(new Color(65, 105, 225));
-		btnActualizar.setBounds(358, 255, 141, 23);
-		contentPane.add(btnActualizar);
+		btnNewButton_1 = new JButton("ACTUALIZAR");
+		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
+		btnNewButton_1.setForeground(new Color(65, 105, 225));
+		btnNewButton_1.setBounds(358, 255, 141, 23);
+		btnNewButton_1.addActionListener(this);
+		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Id_clasifiacion:");
 		lblNewLabel_3_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 12));
@@ -136,11 +147,43 @@ public class FormularioClasificacion extends JFrame {
 		lblNewLabel_3_1.setBounds(602, 101, 123, 14);
 		contentPane.add(lblNewLabel_3_1);
 		
-		JButton btnEliminar = new JButton("ELIMINAR");
+	    btnEliminar = new JButton("ELIMINAR");
 		btnEliminar.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnEliminar.setForeground(new Color(65, 105, 225));
 		btnEliminar.setBounds(651, 157, 112, 23);
+		btnEliminar.addActionListener(this);
 		contentPane.add(btnEliminar);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==btnNewButton) {
+			InsertarClasificacion();
+		} else if(e.getSource()==btnNewButton_1) {
+			ActualizarClasificacion();
+		} else if (e.getSource()==btnEliminar) {
+			EliminarClasificacion();
+		}
+		
+	}
+
+	private void EliminarClasificacion() {
+		int id_clasificacion = Integer.parseInt(textField_4.getText());
+		Clasificacion.elimina_clasificacion(id_clasificacion);
+		
+	}
+
+	private void ActualizarClasificacion() {
+		int id_clasificacion = Integer.parseInt(textField_2.getText());
+		String identificador =  textField_3.getText();
+		String  descripcion = textField_5.getText();
+		Clasificacion.actualizar_clasificacion(id_clasificacion, "'"+identificador+"'", "'"+ descripcion +"'");
+		
+	}
+
+	private void InsertarClasificacion() {
+		String identificador =  textField.getText();
+		String  descripcion = textField_1.getText();
+		Clasificacion.inserta_clasificacion("'" + identificador + "'","'" + descripcion + "'");
 	}
 
 }

@@ -6,14 +6,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.Butaca;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 
-public class FormularioButaca extends JFrame {
+public class FormularioButaca extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -26,6 +32,8 @@ public class FormularioButaca extends JFrame {
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -106,16 +114,18 @@ public class FormularioButaca extends JFrame {
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
 		
-		JButton btnNewButton = new JButton("INSERTAR");
+		btnNewButton = new JButton("INSERTAR");
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(76, 317, 109, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("ACTUALIZAR");
+		btnNewButton_1 = new JButton("ACTUALIZAR");
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setBounds(364, 317, 131, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("ELIMINAR");
@@ -190,4 +200,36 @@ public class FormularioButaca extends JFrame {
 		contentPane.add(textField_9);
 		textField_9.setColumns(10);
 	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==btnNewButton) { 
+			InsertarButaca();
+		} else if (e.getSource()==btnNewButton_1) {
+			ActualizarButaca();
+			
+		}
+		
+	}
+			
+	
+
+	private void ActualizarButaca() {
+		int id_butaca = Integer.parseInt(textField_4.getText());
+		String fila = textField_5.getText();
+		int numero = Integer.parseInt(textField_6.getText());
+		boolean reservada = Boolean.parseBoolean(textField_7.getText());
+		int id_sala = Integer.parseInt( textField_8.getText());
+		Butaca.actualizar_butaca(id_butaca,"'" +fila+ "'", numero, reservada, id_sala);
+		
+	}
+
+	private void InsertarButaca() {
+		String fila = textField.getText();
+		int numero = Integer.parseInt(textField_1.getText());
+		boolean reservada = Boolean.parseBoolean(textField_2.getText());
+		int id_sala = Integer.parseInt( textField_3.getText());
+		Butaca.inserta_butaca("'" +fila+ "'", numero, reservada, id_sala);
+		
+	}
+	
 }

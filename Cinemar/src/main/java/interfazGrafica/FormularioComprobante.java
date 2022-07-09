@@ -6,13 +6,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.Comprobante;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class FormularioComprobante extends JFrame {
+public class FormularioComprobante extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -23,6 +29,9 @@ public class FormularioComprobante extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -91,22 +100,25 @@ public class FormularioComprobante extends JFrame {
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton = new JButton("Insertar");
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setBounds(73, 202, 103, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Actualizar");
+		btnNewButton_1 = new JButton("Actualizar");
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setBounds(285, 244, 117, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2 = new JButton("Eliminar");
 		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_2.setBounds(527, 119, 112, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_2 = new JLabel("id_comprobante:");
@@ -163,5 +175,38 @@ public class FormularioComprobante extends JFrame {
 		textField_7.setBounds(590, 67, 96, 20);
 		contentPane.add(textField_7);
 		textField_7.setColumns(10);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==btnNewButton) {
+			InsertarComprobante();
+		} else if(e.getSource()==btnNewButton_1) {
+			Actualizarcomprobante();
+		} else if (e.getSource()==btnNewButton_2) {
+			Eliminarcomprobante();
+		}
+		
+	}
+
+	private void Eliminarcomprobante() {
+		int id_comprobante = Integer.parseInt(textField_7.getText());
+		Comprobante.elimina_comprobante(id_comprobante);
+		
+	}
+
+	private void Actualizarcomprobante() {
+		int id_comprobante = Integer.parseInt(textField_3.getText());
+		String fechaDeCompra =  textField_4.getText();
+		int id_reserva = Integer.parseInt(textField_5.getText());
+		int id_sesion = Integer.parseInt(textField_6.getText());
+		Comprobante.actualizar_comprobante(id_comprobante,"'" +fechaDeCompra+"'", id_reserva, id_sesion);
+		
+	}
+
+	private void InsertarComprobante() {
+		String fechaDeCompra =  textField.getText();
+		int id_reserva = Integer.parseInt(textField_1.getText());
+		int id_sesion = Integer.parseInt(textField_2.getText());
+		Comprobante.inserta_comprobante("'" +fechaDeCompra+"'", id_reserva, id_sesion);
 	}
 }
