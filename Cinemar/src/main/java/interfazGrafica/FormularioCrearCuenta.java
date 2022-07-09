@@ -6,14 +6,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.CrearCuenta;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class FormularioCrearCuenta extends JFrame {
+public class FormularioCrearCuenta extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -40,6 +46,9 @@ public class FormularioCrearCuenta extends JFrame {
 	private JTextField textField_21;
 	private JTextField textField_22;
 	private JTextField textField_23;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -306,12 +315,14 @@ public class FormularioCrearCuenta extends JFrame {
 		textField_22.setBounds(462, 38, 86, 20);
 		contentPane.add(textField_22);
 		
-		JButton btnNewButton = new JButton("INSERTAR");
+		btnNewButton = new JButton("INSERTAR");
 		btnNewButton.setBounds(71, 328, 109, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("ACTUALIZAR");
+		btnNewButton_1 = new JButton("ACTUALIZAR");
 		btnNewButton_1.setBounds(358, 347, 109, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_1_2_1_1 = new JLabel("id_CrearCuenta:");
@@ -324,8 +335,58 @@ public class FormularioCrearCuenta extends JFrame {
 		textField_23.setBounds(684, 37, 86, 20);
 		contentPane.add(textField_23);
 		
-		JButton btnNewButton_2 = new JButton("ELIMINAR");
+		btnNewButton_2 = new JButton("ELIMINAR");
 		btnNewButton_2.setBounds(617, 65, 89, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==btnNewButton) {
+			insertarCrearCuenta();
+			}else if(e.getSource()==btnNewButton_1){
+				actualizarCrearCuenta();
+			}else if(e.getSource()==btnNewButton_2) {
+				eliminarCrearCuenta();
+			}
+	}
+
+
+	private void eliminarCrearCuenta() {
+		int id_crearCuenta = Integer.parseInt(textField_23.getText());
+		CrearCuenta.elimina_crearCuenta(id_crearCuenta);
+		
+	}
+
+	private void actualizarCrearCuenta() {
+		int id_crearCuenta = Integer.parseInt(textField_22.getText());
+		String nombre=textField_11.getText();
+		String apellido=textField_12.getText();
+		String dni=textField_13.getText();
+		String fechaDeNacimento=textField_14.getText();
+		String nombreUsuarioFicticio=textField_15.getText();
+		String contrasenia=textField_16.getText();
+		String confirmarContrasenia=textField_17.getText();
+		String email=textField_18.getText();
+		String genero=textField_19.getText();
+		String complejoHabitual=textField_20.getText();
+		int id_usuario=Integer.parseInt(textField_21.getText());
+		CrearCuenta.actualizar_crearCuenta(id_crearCuenta,"'" + nombre+ "'","'" + apellido+ "'","'" + dni+ "'", "'" + fechaDeNacimento+ "'", "'" + nombreUsuarioFicticio+ "'", "'" + contrasenia+ "'", "'" +confirmarContrasenia+ "'", "'" +email+ "'", "'" +genero+ "'", "'" +complejoHabitual+ "'", id_usuario);
+	}
+
+	private void insertarCrearCuenta() {
+		String nombre=textField.getText();
+		String apellido=textField_1.getText();
+		String dni=textField_2.getText();
+		String fechaDeNacimento=textField_3.getText();
+		String nombreUsuarioFicticio=textField_4.getText();
+		String contrasenia=textField_5.getText();
+		String confirmarContrasenia=textField_7.getText();
+		String email=textField_6.getText();
+		String genero=textField_8.getText();
+		String complejoHabitual=textField_9.getText();
+		int id_usuario=Integer.parseInt(textField_10.getText());
+		CrearCuenta.inserta_crearCuenta("'" + nombre+ "'","'" + apellido+ "'","'" + dni+ "'", "'" + fechaDeNacimento+ "'", "'" + nombreUsuarioFicticio+ "'", "'" + contrasenia+ "'", "'" +confirmarContrasenia+ "'", "'" +email+ "'", "'" +genero+ "'", "'" +complejoHabitual+ "'", id_usuario);
+		
 	}
 }

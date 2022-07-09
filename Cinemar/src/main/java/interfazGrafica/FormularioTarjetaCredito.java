@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.CrearCuenta;
+import clasesMetodos.TarjetaCredito;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -14,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-public class FormularioTarjetaCredito extends JFrame {
+public class FormularioTarjetaCredito extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -27,6 +31,9 @@ public class FormularioTarjetaCredito extends JFrame {
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
+	private JButton btnNewButton;
+	private JButton btnActualizar;
+	private JButton btnEliminar;
 
 	/**
 	 * Launch the application.
@@ -172,26 +179,59 @@ public class FormularioTarjetaCredito extends JFrame {
 		lblNewLabel_5_1.setBounds(407, 69, 102, 14);
 		contentPane.add(lblNewLabel_5_1);
 		
-		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton = new JButton("Insertar");
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnNewButton.addActionListener(this);
 		btnNewButton.setBounds(66, 224, 102, 30);
 		contentPane.add(btnNewButton);
 		
-		JButton btnActualizar = new JButton("Actualizar");
+		btnActualizar = new JButton("Actualizar");
 		btnActualizar.setForeground(new Color(65, 105, 225));
 		btnActualizar.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnActualizar.setBounds(241, 244, 102, 30);
+		btnActualizar.addActionListener(this);
 		contentPane.add(btnActualizar);
 		
-		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar = new JButton("Eliminar");
 		btnEliminar.setForeground(new Color(65, 105, 225));
 		btnEliminar.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnEliminar.setBounds(456, 100, 102, 30);
+		btnEliminar.addActionListener(this);
 		contentPane.add(btnEliminar);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==btnNewButton) {
+			insertarTarjetaCredito();
+			}else if(e.getSource()==btnActualizar){
+				actualizarTarjetaCredito();
+			}else if(e.getSource()==btnEliminar) {
+				eliminarTarjetaCredito();
+			}
+		
+	}
+
+	private void eliminarTarjetaCredito() {
+		int Id_tarjetaCredito=Integer.parseInt(textField_9.getText());
+		TarjetaCredito.elimina_TarjetaCredito(Id_tarjetaCredito);
+	}
+
+	private void actualizarTarjetaCredito() {
+		int Id_tarjetaCredito=Integer.parseInt(textField_8.getText());
+		String Numero=textField_7.getText();
+		int Balance=Integer.parseInt(textField_6.getText());
+		int Limite=Integer.parseInt(textField_5.getText());
+		String Banco=textField_4.getText();
+		TarjetaCredito.actualizar_TarjetaCredito(Id_tarjetaCredito,"'" + Numero+ "'",Balance,Limite, "'" + Banco+ "'");
+	}
+
+	private void insertarTarjetaCredito() {
+		String Numero=textField.getText();
+		int Balance=Integer.parseInt(textField_1.getText());
+		int Limite=Integer.parseInt(textField_2.getText());
+		String Banco=textField_3.getText();
+		TarjetaCredito.inserta_TarjetaCredito("'" + Numero+ "'",Balance,Limite, "'" + Banco+ "'");
+//		TarjetaCredito.inserta_TarjetaCredito("'3653249873214569'", 10000, 5000, "'galicia'");
 	}
 }

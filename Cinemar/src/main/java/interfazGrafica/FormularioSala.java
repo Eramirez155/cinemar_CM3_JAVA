@@ -6,14 +6,21 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.CrearCuenta;
+import clasesMetodos.Sala;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class FormularioSala extends JFrame {
+public class FormularioSala extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -24,6 +31,9 @@ public class FormularioSala extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -93,10 +103,11 @@ public class FormularioSala extends JFrame {
 		lblNewLabel_3.setBounds(46, 59, 80, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton = new JButton("Insertar");
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(85, 209, 115, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Numero:");
@@ -143,10 +154,11 @@ public class FormularioSala extends JFrame {
 		contentPane.add(textField_6);
 		textField_6.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("Actualizar");
+		btnNewButton_1 = new JButton("Actualizar");
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setBounds(341, 260, 115, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_4_1 = new JLabel("Id_sala:");
@@ -160,11 +172,45 @@ public class FormularioSala extends JFrame {
 		textField_7.setBounds(657, 56, 86, 20);
 		contentPane.add(textField_7);
 		
-		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2 = new JButton("Eliminar");
 		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setBounds(606, 107, 89, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==btnNewButton) {
+			insertarSala();
+			}else if(e.getSource()==btnNewButton_1){
+				actualizarSala();
+			}else if(e.getSource()==btnNewButton_2) {
+				eliminarSala();
+			}
+	}
+
+	private void eliminarSala() {
+		int Id_sala=Integer.parseInt(textField_7.getText());
+		Sala.elimina_sala(Id_sala);
+	}
+
+	private void actualizarSala() {
+		int Id_sala=Integer.parseInt(textField_6.getText());
+		int Numero=Integer.parseInt(textField_3.getText());
+		String Formato=textField_4.getText();
+		int Capacidad=Integer.parseInt(textField_5.getText());
+		Sala.actualizar_sala(Id_sala,Numero,"'" + Formato+ "'",Capacidad);
+		
+	}
+
+	private void insertarSala() {
+		int Numero=Integer.parseInt(textField.getText());
+		String Formato=textField_1.getText();
+		int Capacidad=Integer.parseInt(textField_2.getText());
+		Sala.inserta_sala(Numero,"'" + Formato+ "'",Capacidad);
+//		Sala.inserta_sala(1, "'2D'", 100);
+		
 	}
 
 }

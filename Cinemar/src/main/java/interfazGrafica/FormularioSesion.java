@@ -6,13 +6,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.Sesion;
+import clasesMetodos.Usuario;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.Color;
 
-public class FormularioSesion extends JFrame {
+public class FormularioSesion extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -23,6 +30,9 @@ public class FormularioSesion extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -76,22 +86,25 @@ public class FormularioSesion extends JFrame {
 		lblNewLabel_3.setBounds(10, 116, 104, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton = new JButton("Insertar");
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(25, 149, 89, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Actualizar");
+		btnNewButton_1 = new JButton("Actualizar");
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setBounds(213, 175, 113, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2 = new JButton("Eliminar");
 		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setBounds(449, 75, 89, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
 		
 		textField = new JTextField();
@@ -163,6 +176,39 @@ public class FormularioSesion extends JFrame {
 		textField_7.setColumns(10);
 		textField_7.setBounds(503, 40, 96, 20);
 		contentPane.add(textField_7);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==btnNewButton) {
+			InsertarSesion();
+		} else if(e.getSource()==btnNewButton_1) {
+			ActualizarSesion();
+		} else if (e.getSource()==btnNewButton_2) {
+			EliminarSesion();
+		}
+		
+	}
+
+	private void EliminarSesion() {
+		int id_sesion = Integer.parseInt(textField_7.getText());
+		Sesion.elimina_sesion( id_sesion);
+	}
+
+	private void ActualizarSesion() {
+		int id_sesion = Integer.parseInt(textField_6.getText());
+		String fecha = textField_5.getText();
+		int id_pelicula = Integer.parseInt(textField_4.getText());
+		int id_sala = Integer.parseInt(textField_3.getText());
+		Sesion.actualizar_sesion( id_sesion,"'" +fecha+ "'", id_pelicula, id_sala);
+		
+	}
+
+	private void InsertarSesion() {
+		String fecha = textField.getText();
+		int id_pelicula = Integer.parseInt(textField_1.getText());
+		int id_sala = Integer.parseInt(textField_2.getText());
+		Sesion.inserta_sesion("'" +fecha+ "'", id_pelicula, id_sala);
+		
 	}
 
 }

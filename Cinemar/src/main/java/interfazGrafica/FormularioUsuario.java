@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class FormularioUsuario extends JFrame {
+import clasesMetodos.Butaca;
+import clasesMetodos.Usuario;
+
+public class FormularioUsuario extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -41,6 +46,9 @@ public class FormularioUsuario extends JFrame {
 	private JTextField textField_19;
 	private JTextField textField_20;
 	private JTextField textField_21;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -209,22 +217,25 @@ public class FormularioUsuario extends JFrame {
 		lblNewLabel_3.setBounds(10, 116, 131, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton = new JButton("Insertar");
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(65, 271, 89, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Actualizar");
+		btnNewButton_1 = new JButton("Actualizar");
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setBounds(310, 293, 113, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2 = new JButton("Eliminar");
 		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setBounds(565, 79, 89, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
 		
 		textField = new JTextField();
@@ -275,7 +286,7 @@ public class FormularioUsuario extends JFrame {
 		textField_17.setBounds(131, 189, 96, 20);
 		contentPane.add(textField_17);
 		
-		JLabel lblNewLabel_3_3 = new JLabel("id_sala:");
+		JLabel lblNewLabel_3_3 = new JLabel("dni:");
 		lblNewLabel_3_3.setForeground(Color.WHITE);
 		lblNewLabel_3_3.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_3_3.setBounds(10, 226, 104, 14);
@@ -324,13 +335,13 @@ public class FormularioUsuario extends JFrame {
 		textField_6.setBounds(388, 189, 96, 20);
 		contentPane.add(textField_6);
 		
-		JLabel lblNewLabel_1_3_1 = new JLabel("fecha:");
+		JLabel lblNewLabel_1_3_1 = new JLabel("email:");
 		lblNewLabel_1_3_1.setForeground(Color.WHITE);
 		lblNewLabel_1_3_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_1_3_1.setBounds(263, 192, 104, 14);
 		contentPane.add(lblNewLabel_1_3_1);
 		
-		JLabel lblNewLabel_2_3_1 = new JLabel("id_pelicula:");
+		JLabel lblNewLabel_2_3_1 = new JLabel("fecha_nacimiento:");
 		lblNewLabel_2_3_1.setForeground(Color.WHITE);
 		lblNewLabel_2_3_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_2_3_1.setBounds(263, 228, 104, 14);
@@ -346,7 +357,7 @@ public class FormularioUsuario extends JFrame {
 		textField_20.setBounds(388, 262, 96, 20);
 		contentPane.add(textField_20);
 		
-		JLabel lblNewLabel_3_3_1 = new JLabel("id_sala:");
+		JLabel lblNewLabel_3_3_1 = new JLabel("dni:");
 		lblNewLabel_3_3_1.setForeground(Color.WHITE);
 		lblNewLabel_3_3_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_3_3_1.setBounds(263, 265, 104, 14);
@@ -362,5 +373,44 @@ public class FormularioUsuario extends JFrame {
 		textField_21.setColumns(10);
 		textField_21.setBounds(388, 43, 96, 20);
 		contentPane.add(textField_21);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==btnNewButton) {
+			InsertarUsuario();
+		} else if(e.getSource()==btnNewButton_1) {
+			ActualizarUsuario();
+		} else if (e.getSource()==btnNewButton_2) {
+			EliminarUsuario();
+		}
+		
+	}
+
+	private void EliminarUsuario() {
+		int id_usuario = Integer.parseInt(textField_7.getText());
+		Usuario.elimina_usuario(id_usuario);
+	}
+
+	private void ActualizarUsuario() {
+		int id_usuario = Integer.parseInt(textField_21.getText());
+		String nombre = textField_3.getText();
+		String apellido = textField_4.getText();
+		boolean esAdministrador = Boolean.parseBoolean(textField_5.getText());
+		String email = textField_6.getText();
+		String fecha_nacimiento = textField_19.getText();
+		String dni = textField_20.getText();
+		Usuario.actualizar_usuario(id_usuario, "'" +nombre+ "'","'" + apellido + "'",esAdministrador,"'" + email + "'","'" + fecha_nacimiento + "'","'" +dni+ "'");
+		
+	}
+
+	private void InsertarUsuario() {
+		String nombre = textField.getText();
+		String apellido = textField_1.getText();
+		boolean esAdministrador = Boolean.parseBoolean(textField_2.getText());
+		String email = textField_16.getText();
+		String fecha_nacimiento = textField_17.getText();
+		String dni = textField_18.getText();
+		Usuario.inserta_usuario("'" +nombre+ "'","'" + apellido + "'",esAdministrador,"'" + email + "'","'" + fecha_nacimiento + "'","'" +dni+ "'");
+		
 	}
 }

@@ -6,13 +6,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesMetodos.CrearCuenta;
+import clasesMetodos.InicioSesion;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class FormularioInicioSesion extends JFrame {
+public class FormularioInicioSesion extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -31,6 +38,9 @@ public class FormularioInicioSesion extends JFrame {
 	private JTextField textField_13;
 	private JTextField textField_14;
 	private JTextField textField_15;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -143,22 +153,25 @@ public class FormularioInicioSesion extends JFrame {
 		contentPane.add(textField_6);
 		textField_6.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Insertar");
+		btnNewButton = new JButton("Insertar");
 		btnNewButton.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton.setForeground(new Color(65, 105, 225));
 		btnNewButton.setBounds(64, 249, 114, 23);
+		btnNewButton.addActionListener(this);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Actualizar");
+		btnNewButton_1 = new JButton("Actualizar");
 		btnNewButton_1.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_1.setForeground(new Color(65, 105, 225));
 		btnNewButton_1.setBounds(322, 275, 114, 23);
+		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2 = new JButton("Eliminar");
 		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setBounds(564, 83, 114, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_8 = new JLabel("id_inicioSesion:");
@@ -259,6 +272,48 @@ public class FormularioInicioSesion extends JFrame {
 		textField_15.setBounds(606, 56, 96, 20);
 		contentPane.add(textField_15);
 		textField_15.setColumns(10);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==btnNewButton){
+			insertarInicioSesion();
+		}else if(e.getSource()==btnNewButton_1){
+			actualizarInicioSesion();
+		}else if(e.getSource()==btnNewButton_2) {
+			eliminarInicioSesion();
+		}
+		
+	}
+
+	private void eliminarInicioSesion() {
+		int id_inicioSesion=Integer.parseInt(textField_15.getText());
+		InicioSesion.elimina_inicioSesion(id_inicioSesion);
+	}
+
+	private void actualizarInicioSesion() {
+		int id_inicioSesion=Integer.parseInt(textField_7.getText());
+		String nombreUsuarioFicticio=textField_8.getText();
+		String contrasenia=textField_9.getText();
+		String confirmarContrasenia=textField_10.getText();
+		String email=textField_11.getText();
+		int id_crearCuenta=Integer.parseInt(textField_12.getText());
+		int id_usuario=Integer.parseInt(textField_13.getText());
+		int id_tarjetaCredito=Integer.parseInt(textField_14.getText());
+		InicioSesion.actualizar_InicioSesion(id_inicioSesion,"'" + nombreUsuarioFicticio+ "'","'" + contrasenia+ "'","'" + confirmarContrasenia+ "'", "'" + email+ "'",id_crearCuenta,id_usuario,id_tarjetaCredito);
+		
+	}
+
+	private void insertarInicioSesion() {
+		String nombreUsuarioFicticio=textField.getText();
+		String contrasenia=textField_1.getText();
+		String confirmarContrasenia=textField_2.getText();
+		String email=textField_3.getText();
+		int id_crearCuenta=Integer.parseInt(textField_4.getText());
+		int id_usuario=Integer.parseInt(textField_5.getText());
+		int id_tarjetaCredito=Integer.parseInt(textField_6.getText());
+		InicioSesion.inserta_inicioSesion("'" + nombreUsuarioFicticio+ "'","'" + contrasenia+ "'","'" + confirmarContrasenia+ "'", "'" + email+ "'",id_crearCuenta,id_usuario,id_tarjetaCredito);
+//		InicioSesion.inserta_inicioSesion("'Ed01'", "'123456'", "'123456'", "'Ed1@gmail.com'", 1, 2, 3);
+		
 	}
 
 }

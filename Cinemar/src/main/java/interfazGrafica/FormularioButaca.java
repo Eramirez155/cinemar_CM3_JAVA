@@ -34,6 +34,7 @@ public class FormularioButaca extends JFrame implements ActionListener{
 	private JTextField textField_9;
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -128,10 +129,11 @@ public class FormularioButaca extends JFrame implements ActionListener{
 		btnNewButton_1.addActionListener(this);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("ELIMINAR");
+		btnNewButton_2 = new JButton("ELIMINAR");
 		btnNewButton_2.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		btnNewButton_2.setForeground(new Color(65, 105, 225));
 		btnNewButton_2.setBounds(618, 160, 114, 23);
+		btnNewButton_2.addActionListener(this);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_5 = new JLabel("Id_butaca:");
@@ -189,7 +191,7 @@ public class FormularioButaca extends JFrame implements ActionListener{
 		contentPane.add(textField_8);
 		textField_8.setColumns(10);
 		
-		JLabel lblNewLabel_10 = new JLabel("Id_sala:");
+		JLabel lblNewLabel_10 = new JLabel("Id_butaca:");
 		lblNewLabel_10.setForeground(new Color(255, 255, 255));
 		lblNewLabel_10.setFont(new Font("Showcard Gothic", Font.PLAIN, 11));
 		lblNewLabel_10.setBounds(590, 117, 57, 14);
@@ -207,11 +209,17 @@ public class FormularioButaca extends JFrame implements ActionListener{
 		} else if (e.getSource()==btnNewButton_1) {
 			ActualizarButaca();
 			
-		}
+		}else if (e.getSource()==btnNewButton_2) {
+			EliminarButaca();
 		
 	}
 			
-	
+	}
+
+	private void EliminarButaca() {
+		int id_butaca = Integer.parseInt(textField_9.getText());
+		Butaca.elimina_butaca(id_butaca);
+	}
 
 	private void ActualizarButaca() {
 		int id_butaca = Integer.parseInt(textField_4.getText());
